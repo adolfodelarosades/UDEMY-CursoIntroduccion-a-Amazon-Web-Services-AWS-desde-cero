@@ -9,20 +9,20 @@ Aprenda a usar los servicios de Cloud Computing que ofrece Amazon (AWS) y consig
 
 ## Contenido del curso 50 clases 08:56:58
 
-### Introducción al curso 11:00
+### 1. Introducción al curso 11:00
 
 * Bienvenido al curso Amazon AWS 02:54
 * ¿Qué es lo que vas aprender en este curso? 03:48
 * Como seguir este curso 03:49
 * Nota importante sobre la valoración del curso 00:29
 
-### Conceptos básicos de una cuenta Amazon AWS 30:17
+### 2. Conceptos básicos de una cuenta Amazon AWS 30:17
 
 * AWS Free Tier (capa gratuita) 10:25
 * Crear una cuenta AWS 10:09
 * Como navegar por la consola de AWS 09:43
 
-### Identity & Access Management (IAM) 51:02
+### 3. Identity & Access Management (IAM) 51:02
 
 * ¿Qué es IAM? 06:50
 * Configuración inicial de IAM 23:05
@@ -30,7 +30,7 @@ Aprenda a usar los servicios de Cloud Computing que ofrece Amazon (AWS) y consig
 * Grupos y politicas en IAM 07:13
 * Roles en IAM 06:21
 
-### Virtual Private Cloud (VPC) 01:39:57
+### 4. Virtual Private Cloud (VPC) 01:39:57
 
 * Infraestructura Global en AWS 10:13
 * Introducción a VPC 13:14
@@ -40,7 +40,7 @@ Aprenda a usar los servicios de Cloud Computing que ofrece Amazon (AWS) y consig
 * Subredes 15:18
 * Availability Zones (AZs) 19:48
 
-### Simple Storage Service (S3) 01:15:44
+### 5. Simple Storage Service (S3) 01:15:44
 
 * Introducción a S3 13:55
 * Cubos y Objetos 09:48
@@ -49,7 +49,7 @@ Aprenda a usar los servicios de Cloud Computing que ofrece Amazon (AWS) y consig
 * Permisos 05:45
 * Control de versiones de objetos 11:14
 
-### Elastic Compute Cloud (EC2) 01:29:16
+### 6. Elastic Compute Cloud (EC2) 01:29:16
 
 * Introducción a EC2 19:55
 * Amazon Machine Images (AMIs) 10:05
@@ -59,43 +59,43 @@ Aprenda a usar los servicios de Cloud Computing que ofrece Amazon (AWS) y consig
 * Direccionamiento IP 05:10
 * Lanzamiento y uso de una instancia de EC2 22:47
 
-### Base de Datos 37:41
+### 7. Base de Datos 37:41
 
 * Introducción a RDS y DynamoDB 13:28
 * Aprovisionamiento de una base de datos MySQL 24:13
 
-### Simple Notification Service (SNS) 24:36
+### 8. Simple Notification Service (SNS) 24:36
 
 * Introducción a SNS 11:33
 * Usando SNS 13:03
 
-### CloudWatch 21:36
+### 9. CloudWatch 21:36
 
 * Introducción a CloudWatch 08:23
 * Métricas y alarmas en CloudWatch 13:13
 
-### Elastic Load Balancer (ELB) 22:54
+### 10. Elastic Load Balancer (ELB) 22:54
 
 * Introducción a ELB 08:01
 * Creando un ELB 14:53
 
-### Auto Scaling 28:19
+### 11. Auto Scaling 28:19
 
 * Introducción a Auto Scaling 09:23
 * Componentes del Auto Scaling 03:07
 * Usando Auto Scaling en AWS 15:49
 
-### Route 53 20:09
+### 12. Route 53 20:09
 
 * Introducción a Route 53 07:16
 * Usando Route 53 12:53
 
-### Lambda 20:03
+### 13. Lambda 20:03
 
 * Introducción Lambda 11:20
 * Funciones Lamdba 08:43
 
-### Resumen y conclusión del curso 04:24
+### 14. Resumen y conclusión del curso 04:24
 
 * ¿Qué debería hacer después de este curso? 02:21
 * Próximos pasos 01:18
