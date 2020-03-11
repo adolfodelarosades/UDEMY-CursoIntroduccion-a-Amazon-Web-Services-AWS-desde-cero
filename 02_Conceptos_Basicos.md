@@ -46,6 +46,26 @@ La cuenta gratuita "Free Tier" incluye los siguientes servicios:
 
 ## Crear una cuenta AWS 10:09
 
+### Lección 2: Crear Cuenta
+
+Crear una cuenta AWS "Free Tier"
+
+* Paso a paso cuenta AWS "Free Tier"
+* Como crear una cuenta AWS "Free Tier"
+
+URL: https://aws.amazon.com/es/
+
+1. Haz clic en "iniciar sesión en la consola"
+2. Introducir email
+3. Asegurate que seleccionas "Soy un nuevo usuario"
+4. Completa el formulario de "credenciales de acceso"
+5. Selecciona cuenta "Empresa" o "Personal"
+6. Completa el resto del formulario de información de contacto
+7. Completa el formulario de información de pago "Necesita una tarjeta de crédito valida"
+8. Completa el formulario de "verificación de identidad" y seguir las instrucciones para ingresar el número PIN de verificación.
+9. Selecciona un plan de soporte (Selecciona "Basic" - sin costo/uso gratuito 
+10. Inicia sesión en la consola de AWS con tus credenciales recién creadas
+
 ## Como navegar por la consola de AWS 09:43
 
 
