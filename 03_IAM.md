@@ -43,12 +43,15 @@ En esta sección veremos la creación de IAM.
 
    <img src="images/c3/3-iam-2.png">
 
-   Si entramos a la opción tenemos:
+   Si entramos a la opción IAM tenemos:
    
    <img src="images/c3/3-iam-3.png">
    
    [Video](https://www.youtube.com/watch?time_continue=135&v=Ul6FW4UANGc&feature=emb_logo)
 
+**El uso común de IAM es administrar todos los Grupos, Usuarios, Roles, Políticas**
+
+Existe el usuario **root** 
 
 #### Usos comunes en IAM
 #### La importancia de la cuenta root
