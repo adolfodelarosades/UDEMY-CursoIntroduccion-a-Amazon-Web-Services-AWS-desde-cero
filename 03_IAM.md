@@ -110,30 +110,19 @@ Arquitectura de MFA.
 
 <img src="images/c3/3-mfa-1.png">
 
-Cuando activemos MFA en la cuenta root, lo que sucederá es que una vez que ingresemos el email y password, se nos solicitará el código MFA, el cual se envía al móvil, una vez que ingresemos dicho código MFA se nos permitirá entrar a la cuenta de root.
+Cuando activemos MFA en la cuenta **root**, lo que estamos es añadiendo un paso intermedio al inicio de sesión del usuario **root**, lo que sucederá es que una vez que ingresemos el email y password, se nos solicitará el código MFA, el cual lo encontraremos en el móvil en la aplicación Google Authenticator, una vez que ingresemos dicho código MFA se nos permitirá entrar a la cuenta de **root**.
    
+<img src="images/c3/3-mfa-2.png">
 
+<img src="images/c3/3-mfa-3.png">
 
+<img src="images/c3/3-mfa-4.png">
 
+<img src="images/c3/3-mfa-5.png">
 
+<img src="images/c3/3-mfa-6.png">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<img src="images/c3/3-mfa-7.png">
 
 ## Usuarios y politicas en IAM 07:33
 ## Grupos y politicas en IAM 07:13
