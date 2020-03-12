@@ -12,7 +12,7 @@ En esta sección veremos la creación de IAM.
 
 <img src="images/c3/3-iam.png">
 
-### Lección 3: Identity & Accesss Management (IAM)
+### Lección 1: Identity & Accesss Management (IAM)
 
 * Que es IAM
 * Configuración y parametrización de IAM
@@ -49,15 +49,21 @@ En esta sección veremos la creación de IAM.
    
    [Video](https://www.youtube.com/watch?time_continue=135&v=Ul6FW4UANGc&feature=emb_logo)
 
-**El uso común de IAM es administrar todos los Grupos, Usuarios, Roles, Políticas**
-
-Existe el usuario **root** 
+Cuando creamos la cuenta AWS, a su vez se creo el usuario **root** basado en los datos inroducidos como email, nombre, etc. 
 
 #### Usos comunes en IAM
+
+El uso común de IAM es administrar todos los Grupos, Usuarios, Roles, Políticas
+
 #### La importancia de la cuenta root
 
+El usuario **root** tiene acceso a todos los servicios y configuraciones de AWS.
+
+Cuando creamos un nuevo usuario con IAM este se crea sin ningún acceso de los servicios de AWS, lo único que pueden hacer es iniciar sesión. Para que tenga acceso a los servicios de AWS nos apoyaremos con los Grupos, Usuarios, Roles y Políticas de acceso.
 
 ## Configuración inicial de IAM 23:05
+
+
 ## Usuarios y politicas en IAM 07:33
 ## Grupos y politicas en IAM 07:13
 ## Roles en IAM 06:21
