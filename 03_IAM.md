@@ -110,19 +110,35 @@ Arquitectura de MFA.
 
 <img src="images/c3/3-mfa-1.png">
 
-Cuando activemos MFA en la cuenta **root**, lo que estamos es añadiendo un paso intermedio al inicio de sesión del usuario **root**, lo que sucederá es que una vez que ingresemos el email y password, se nos solicitará el código MFA, el cual lo encontraremos en el móvil en la aplicación Google Authenticator, una vez que ingresemos dicho código MFA se nos permitirá entrar a la cuenta de **root**.
-   
+Cuando activemos MFA en la cuenta **root**, lo que estamos haciendo es añadiendo un paso intermedio al inicio de sesión del usuario **root**, una vez que ingresemos el email y password se nos solicitará el código MFA, el cual lo encontraremos en el móvil, en la aplicación Google Authenticator, una vez que ingresemos dicho código MFA se nos permitirá entrar a la cuenta de **root**.
+
+Vamos a ver como se activa MFA, pulsamos en **Activar MFA en la cuenta raíz**.
+
 <img src="images/c3/3-mfa-2.png">
+
+Presionamos el botón **Administrar MFA**, nos lleva a la siguiente pantalla, donde debemos seleccionar la segunda opción **Multi-Factor Authentication (MFA)**.
 
 <img src="images/c3/3-mfa-3.png">
 
+Aquí pulsaremos el botón **Activar MFA**, nos presenta el siguiente PopUp:
+ 
 <img src="images/c3/3-mfa-4.png">
+
+Seleccionamos la opción **Dispositivo MFA virtual**, al presionar el botón **Continuar**
 
 <img src="images/c3/3-mfa-5.png">
 
+Aquí se nos presenta un código Bidi el cual debemos escanear con el móvil con la aplicación Google Authenticator.
+
 <img src="images/c3/3-mfa-6.png">
 
+En la aplicación móvil nos apareceran los códigos de MFA1 y MFA2. Los introducimos y presionamos en **Asignar MFA**.
+
+Finalmente se nos indica que **hemos asignado un tipo de MFA virtual correctamente**.
+
 <img src="images/c3/3-mfa-7.png">
+
+Al entrar en IAM ya vemos que la opción **Activar MFA en la cuenta raíz** esta activa.
 
 ## Usuarios y politicas en IAM 07:33
 ## Grupos y politicas en IAM 07:13
