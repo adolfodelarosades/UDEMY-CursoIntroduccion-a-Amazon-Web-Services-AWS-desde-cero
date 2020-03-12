@@ -91,25 +91,26 @@ Para cumplir con las Mejores practicas de IAM debemos cumplir con las siguientes
 
 Esta marcada y de color verde lo que indica que esta tarea ya esta realizada o más bien no existen claves de acceso que borrar para **root** por que no se crearón automáticamente.
 
-#### Activar MFA en la cuenta raíz
+#### Activar MFA en la cuenta root
 
 * **¿Qué es MFA?**
    * Acrónimo inglés para Multi-Factor Authentification
    * Capa adicional de seguridad para tu cuenta root
    * Código random de seis dígitos continuamente cambiante que necesitas poner (ademas de tu contraseña) para iniciar sesión en tu cuenta root.
    
-* **¿Cómo consigo este código MFA?
+* **¿Cómo consigo este código MFA?**
    * Dispositivo virtual MFA
       * Teléfono o tableta
-      * Aplicación de uso común (IOS y Android): Google Authenticator.
+      * Aplicación Google Authenticator de uso común (IOS y Android). Instalar Google Authenticator.
    * Dispositivo físico MFA(llavero físico)
       * Dispositivo físico pequeño con pantalla
       * Se compra directamente desde Amazon AWS
 
+Arquitectura de MFA.
 
+<img src="images/c3/3-mfa-1.png">
 
-
-
+Cuando activemos MFA en la cuenta root, lo que sucederá es que una vez que ingresemos el email y password, se nos solicitará el código MFA, el cual se envía al móvil, una vez que ingresemos dicho código MFA se nos permitirá entrar a la cuenta de root.
    
 
 
