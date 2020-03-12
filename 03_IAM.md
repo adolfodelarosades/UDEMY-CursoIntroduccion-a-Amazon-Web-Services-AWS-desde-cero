@@ -128,17 +128,15 @@ Seleccionamos la opción **Dispositivo MFA virtual**, al presionar el botón **C
 
 <img src="images/c3/3-mfa-5.png">
 
-Aquí se nos presenta un código Bidi el cual debemos escanear con el móvil con la aplicación Google Authenticator.
-
-<img src="images/c3/3-mfa-6.png">
-
-En la aplicación móvil nos apareceran los códigos de MFA1 y MFA2. Los introducimos y presionamos en **Asignar MFA**.
+Aquí se nos presenta un código Bidi el cual debemos escanear con el móvil con la aplicación Google Authenticator. En la aplicación móvil nos apareceran los códigos de MFA1 y MFA2. Los introducimos y presionamos en **Asignar MFA**.
 
 Finalmente se nos indica que **hemos asignado un tipo de MFA virtual correctamente**.
 
-<img src="images/c3/3-mfa-7.png">
+<img src="images/c3/3-mfa-6.png">
 
 Al entrar en IAM ya vemos que la opción **Activar MFA en la cuenta raíz** esta activa.
+
+<img src="images/c3/3-mfa-7.png">
 
 ## Usuarios y politicas en IAM 07:33
 ## Grupos y politicas en IAM 07:13
