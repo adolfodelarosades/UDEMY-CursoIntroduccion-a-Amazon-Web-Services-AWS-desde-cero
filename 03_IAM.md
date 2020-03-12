@@ -70,20 +70,46 @@ Los temas que trataremos son:
 * Creación de un usuario y grupo administrador
 * Creación de políticas de password en IAM
 
-### IAM Setup
+### Mejores practicas en IAM
 
-* Mejores practicas en IAM: Pautas que recomiendan configuraciones de arquitectura con el propósito de alcanzar un nivel alto en seguridad, accesibilidad y eficiencia.
+* Pautas que recomiendan configuraciones de arquitectura con el propósito de alcanzar un nivel alto en seguridad, accesibilidad y eficiencia.
 
-* Cuando se crea una nueva cuenta root en AWS, es muy buena práctica completar las tareas enumeradas en la sección de "Status Security" en IAM
+* Cuando se crea una nueva cuenta root en AWS, es muy buena práctica completar las tareas enumeradas en la sección de "Estado de seguridad" en IAM. Si entramos a IAM veremos a lo que nos referimos:
+
+<img src="images/c3/3-iam-3.png">
+
+Para cumplir con las Mejores practicas de IAM debemos cumplir con las siguientes tareas:
 
 * Estas tareas incluyen lo siguiente:
-   * Delete your root access key
-   * Activate MFA on your root account
-   * Create individual IAM users
-   * Use groups to assing permissions
-   * Appy an IAM password policy
+   * Eliminar las claves de acceso raíz
+   * Activar MFA en la cuenta raíz
+   * Crear usuarios de IAM individuales
+   * Utilizar grupos para asignar permisos
+   * Aplicar una política de contraseñas de IAM
    
+#### Eliminar las claves de acceso raíz
+
+Esta marcada y de color verde lo que indica que esta tarea ya esta realizada o más bien no existen claves de acceso que borrar para **root** por que no se crearón automáticamente.
+
+#### Activar MFA en la cuenta raíz
+
+* **¿Qué es MFA?**
+   * Acrónimo inglés para Multi-Factor Authentification
+   * Capa adicional de seguridad para tu cuenta root
+   * Código random de seis dígitos continuamente cambiante que necesitas poner (ademas de tu contraseña) para iniciar sesión en tu cuenta root.
    
+* **¿Cómo consigo este código MFA?
+   * Dispositivo virtual MFA
+      * Teléfono o tableta
+      * Aplicación de uso común (IOS y Android): Google Authenticator.
+   * Dispositivo físico MFA(llavero físico)
+      * Dispositivo físico pequeño con pantalla
+      * Se compra directamente desde Amazon AWS
+
+
+
+
+
    
 
 
