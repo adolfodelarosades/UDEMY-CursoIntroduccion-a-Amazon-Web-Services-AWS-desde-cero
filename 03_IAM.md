@@ -39,7 +39,17 @@ En esta sección veremos la creación de IAM.
 * Por defecto el **usuario root** tiene **acceso completo & total** a la cuenta.
 * Por defecto cualquier usuario que cree en AWS se crea **sin acceso** a ningún servicio de AWS (excepto para poder iniciar sesión).
 * Para todos los usuarios (excepto usuario root) se deben otorgar permisos que permitan el acceso a los servicios de AWS.
+* La opción IAM la tenemos en el Grupo **Seguridad, identidad y conformidad** 
 
+   <img src="images/c2/3-iam-2.png">
+
+   Si entramos a la opción tenemos:
+   
+   <img src="images/c2/3-iam-3.png">
+   
+   [Video](https://www.youtube.com/watch?time_continue=135&v=Ul6FW4UANGc&feature=emb_logo)
+   
+   
 
 
    
