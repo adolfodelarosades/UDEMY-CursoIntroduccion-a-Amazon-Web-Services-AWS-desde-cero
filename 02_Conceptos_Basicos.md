@@ -66,6 +66,50 @@ URL: https://aws.amazon.com/es/
 9. Selecciona un plan de soporte (Selecciona "Basic" - sin costo/uso gratuito 
 10. Inicia sesión en la consola de AWS con tus credenciales recién creadas
 
+<img src="images/c2/2-consola.png">
+
 ## Como navegar por la consola de AWS 09:43
 
+### Lección 3: Introducción Cuenta AWS
+
+Crear una cuenta AWS "Free Tier"
+
+* Tour por la consola AWS
+* Encontrar servicios y funciones
+
+#### Tour por la consola AWS
+
+Aprender a navegar por la consola de AWS para acceder y encontrar los servicios mas interesantes e importantes.
+
+* Servicios AWS
+* Documentación
+* Soporte
+* Selección de regiones en AWS
+* Configuración de la cuenta
+
+#### Servicios AWS
+
+En la consola tenemos una Barra de Menus.
+
+<img src="images/c2/2-barra-navegacion.png">
+
+Si pulsamos en **Servicios** vemos lo siguiente:
+
+<img src="images/c2/2-servicios.png">
+
+Los servicios estan agrupados por categorías. También contamos con un **Buscador servicios** y un **Servicios visitados recientemente**
+
+Basta hacer click en el nombre del Servicio, para que Amazon lo abra.
+
+Siempre se podra regresar a la Home presionando en el logo AWS.
+
+#### Documentación
+
+La [Documentación de AWS](https://docs.aws.amazon.com/index.html) la encontraremos al pulsar la opción **Soporte** en la barra de menú.
+
+<img src="images/c2/2-soporte.png">
+
+Si pulsamos en **Documentación** se nos presenta la página de Documentación AWS.
+
+<img src="images/c2/2-documentacion.png">
 
