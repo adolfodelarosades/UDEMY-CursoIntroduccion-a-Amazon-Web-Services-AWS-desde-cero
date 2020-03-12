@@ -70,7 +70,7 @@ Los temas que trataremos son:
 * Creación de un usuario y grupo administrador
 * Creación de políticas de password en IAM
 
-### Mejores practicas en IAM
+### Mejores Practicas en IAM
 
 * Pautas que recomiendan configuraciones de arquitectura con el propósito de alcanzar un nivel alto en seguridad, accesibilidad y eficiencia.
 
@@ -87,11 +87,11 @@ Para cumplir con las Mejores practicas de IAM debemos cumplir con las siguientes
    * Utilizar grupos para asignar permisos
    * Aplicar una política de contraseñas de IAM
    
-#### Eliminar las claves de acceso raíz
+#### Eliminar las Claves de Acceso Raíz
 
 Esta marcada y de color verde lo que indica que esta tarea ya esta realizada o más bien no existen claves de acceso que borrar para **root** por que no se crearón automáticamente.
 
-#### Activar MFA en la cuenta root
+#### Activar MFA en la Cuenta Root
 
 * **¿Qué es MFA?**
    * Acrónimo inglés para Multi-Factor Authentification
@@ -137,6 +137,14 @@ Finalmente se nos indica que **hemos asignado un tipo de MFA virtual correctamen
 Al entrar en IAM ya vemos que la opción **Activar MFA en la cuenta raíz** esta activa.
 
 <img src="images/c3/3-mfa-7.png">
+
+**A partir de aquí, cada que nos conectemos como root se nos pedirán los códigos MFA**
+
+#### Crear Usuarios de IAM Individuales
+
+#### Utilizar Grupos para Asignar Permisos
+
+#### Aplicar una Política de Contraseñas de IAM
 
 ## Usuarios y politicas en IAM 07:33
 ## Grupos y politicas en IAM 07:13
