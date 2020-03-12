@@ -12,9 +12,9 @@ En esta sección veremos la creación de IAM.
 
 <img src="images/c3/3-iam.png">
 
-### Lección 1: Identity & Accesss Management (IAM)
+Los temas que trataremos son:
 
-* Que es IAM
+* Que es IAM (Identity & Accesss Management )
 * Configuración y parametrización de IAM
 * Explicación de que es y para que se usan los: 
    * Usuarios
@@ -22,7 +22,7 @@ En esta sección veremos la creación de IAM.
    * Políticas
    * Roles
    
-#### Que es IAM
+### Que es IAM
 
 * Que es IAM
 * Usos comunes en IAM
@@ -62,6 +62,50 @@ El usuario **root** tiene acceso a todos los servicios y configuraciones de AWS.
 Cuando creamos un nuevo usuario con IAM este se crea sin ningún acceso de los servicios de AWS, lo único que pueden hacer es iniciar sesión. Para que tenga acceso a los servicios de AWS nos apoyaremos con los Grupos, Usuarios, Roles y Políticas de acceso.
 
 ## Configuración inicial de IAM 23:05
+
+Los temas que trataremos son:
+
+* Mejores practicas en IAM
+* MFA en IAM
+* Creación de un usuario y grupo administrador
+* Creación de políticas de password en IAM
+
+### IAM Setup
+
+* Mejores practicas en IAM: Pautas que recomiendan configuraciones de arquitectura con el propósito de alcanzar un nivel alto en seguridad, accesibilidad y eficiencia.
+
+* Cuando se crea una nueva cuenta root en AWS, es muy buena práctica completar las tareas enumeradas en la sección de "Status Security" en IAM
+
+* Estas tareas incluyen lo siguiente:
+   * Delete your root access key
+   * Activate MFA on your root account
+   * Create individual IAM users
+   * Use groups to assing permissions
+   * Appy an IAM password policy
+   
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Usuarios y politicas en IAM 07:33
