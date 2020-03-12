@@ -1,4 +1,4 @@
-# 2. Conceptos básicos de una cuenta Amazon AWS 30:17
+# 2. Conceptos Básicos de una Cuenta Amazon AWS 30:17
 
 * AWS Free Tier (capa gratuita) 10:25
 * Crear una cuenta AWS 10:09
