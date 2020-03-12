@@ -82,12 +82,11 @@ Crear una cuenta AWS "Free Tier"
 Aprender a navegar por la consola de AWS para acceder y encontrar los servicios mas interesantes e importantes.
 
 * Servicios AWS
-* Documentación
-* Soporte
+* Soporte/Documentación
 * Selección de regiones en AWS
 * Configuración de la cuenta
 
-#### Servicios AWS
+##### Servicios AWS
 
 En la consola tenemos una Barra de Menus.
 
@@ -103,13 +102,28 @@ Basta hacer click en el nombre del Servicio, para que Amazon lo abra.
 
 Siempre se podra regresar a la Home presionando en el logo AWS.
 
-#### Documentación
+#### Soporte/Documentación
 
-La [Documentación de AWS](https://docs.aws.amazon.com/index.html) la encontraremos al pulsar la opción **Soporte** en la barra de menú.
+Dentro de la Barra de Menú tenemos la opción **Soporte**:
 
-<img src="images/c2/2-soporte.png">
+<img src="images/c2/2-soporte.png"> 
 
-Si pulsamos en **Documentación** se nos presenta la página de Documentación AWS.
+Una de las opciones es Documentación. Si pulsamos en **Documentación** se nos presenta la página de [Documentación de AWS](https://docs.aws.amazon.com/index.html).
 
 <img src="images/c2/2-documentacion.png">
+
+#### Selección de Regiones en AWS
+
+En la Barra de Menú tenemos la opción de seleccionar la **Región**.
+
+<img src="images/c2/2-regiones.png">
+
+Por defecto tenemos una región asignada de acuerdo a los datos ingresados en el registro, pero podemos cambiar la región seleccionando una diferente.
+
+#### Configuración de la Cuenta
+
+En la Barra de Menú tenemos la opción de seleccionar la **Cuenta**, al pusar en el nombre de la cuenta vemos las diferentes opciones:
+
+<img src="images/c2/2-cuenta.png">
+
 
