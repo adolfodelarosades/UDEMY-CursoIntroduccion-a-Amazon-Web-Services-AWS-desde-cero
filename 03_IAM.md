@@ -10,7 +10,7 @@
 
 En esta sección veremos la creación de IAM.
 
-<img src="images/c2/3-iam.png">
+<img src="images/c3/3-iam.png">
 
 ### Lección 3: Identity & Accesss Management (IAM)
 
@@ -41,28 +41,13 @@ En esta sección veremos la creación de IAM.
 * Para todos los usuarios (excepto usuario root) se deben otorgar permisos que permitan el acceso a los servicios de AWS.
 * La opción IAM la tenemos en el Grupo **Seguridad, identidad y conformidad** 
 
-   <img src="images/c2/3-iam-2.png">
+   <img src="images/c3/3-iam-2.png">
 
    Si entramos a la opción tenemos:
    
-   <img src="images/c2/3-iam-3.png">
+   <img src="images/c3/3-iam-3.png">
    
    [Video](https://www.youtube.com/watch?time_continue=135&v=Ul6FW4UANGc&feature=emb_logo)
-   
-   
-
-
-   
-
-
-
-
-
-
-
-
-
-
 
 
 #### Usos comunes en IAM
