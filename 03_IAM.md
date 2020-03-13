@@ -138,7 +138,7 @@ Al entrar en IAM ya vemos que la opción **Activar MFA en la cuenta raíz** esta
 
 <img src="images/c3/3-mfa-7.png">
 
-**A partir de aquí, cada que nos conectemos como root se nos pedirán los códigos MFA**
+*A partir de aquí, cada que nos conectemos como root se nos pedirán los códigos MFA*
 
 #### Crear Usuarios de IAM Individuales
 
@@ -148,7 +148,53 @@ Al entrar en IAM ya vemos que la opción **Activar MFA en la cuenta raíz** esta
 
 * Luego usa esta nueva cuenta con acceso de administrador diariamente.
 
+Vamos a crear usuario, pulsamos en **Crear usuarios de IAM individuales**.
+
+<img src="images/c3/3-usuario-1.png">
+
+Vamos a presionar el botón **Administrar los usuarios**. Nos llevara a la sección de Usuarios y por el momento no tenemos ninguno.
+
+<img src="images/c3/3-usuario-2.png">
+
+Vamos a presionar sobre el botón **Añadir usuario(s)**.
+
+<img src="images/c3/3-usuario-3.png">
+
+Se nos iran presentando diferentes pantallas que tenemos que rellenar:
+
+<img src="images/c3/3-usuario-4.png">
+
+Presionamos **Siguiente: Permisos**
+
+<img src="images/c3/3-usuario-5.png">
+
+Presionamos **Siguiente: Etiquetas**
+
+<img src="images/c3/3-usuario-6.png">
+
+Presionamos **Siguiente: Revisar**
+
+<img src="images/c3/3-usuario-7.png">
+
+Presionamos el botón **Crear un usuario**
+
+<img src="images/c3/3-usuario-8.png">
+
+Se nos indica que el usuario ha sido creado. Presionamos **Cerrar**
+
+<img src="images/c3/3-usuario-9.png">
+
+Como podemos observar al regresar al Panel de Usuarios ya tenemos el usuario **Jose** que acabamos de crear. 
+
+Si regresamos al Paner de IAM la opción **Crear usuarios de IAM individuales** ya la tenemos marcarcada como hecha. Ademas tenemos **Usuarios: 1** que nos indica que tenemos un usuario.
+
+<img src="images/c3/3-usuario-10.png">
+
+*Con esto ya podemos Iniciar Sesión con el usuario Jose en lugar de root, teniendo acceso como Administrador para realizar cualquier cambio que necesitemos*.
+
 #### Utilizar Grupos para Asignar Permisos
+
+
 
 #### Aplicar una Política de Contraseñas de IAM
 
