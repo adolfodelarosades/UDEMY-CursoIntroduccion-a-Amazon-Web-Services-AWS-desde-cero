@@ -230,8 +230,25 @@ Como podemos ver ya tenemos creado el grupo Admin_JMG que tiene asignada la pol�
    * Si el password expira
    * Si el password se puede reusar.
    
-   
+Vamos a aplicar una política de contraseñas   , pulsamos en **Aplicar una Política de Contraseñas de IAM** 
 
+<img src="images/c3/3-pol-1.png">
+
+y presionamos el botón **Administrar la política de contraseñas**.
+
+<img src="images/c3/3-pol-2.png">
+
+Presionamos el botón **Establecer la política de contraseñas**
+
+<img src="images/c3/3-pol-3.png">
+
+Presionamos el botón **Guardar los cambios**
+
+<img src="images/c3/3-pol-4.png">
+
+Se nos indicaa que **Se actualizó la política de contraseñas**. Si regresamos al panel IAM vemos que ya tenemos marcada la opción de **Aplicar una Política de Contraseñas de IAM**
+
+Por lo que ya hemos cumplido con todas las tareas dentro de IAM en cuanto a la configuración inicial de IAM.
 
 ## Usuarios y politicas en IAM 07:33
 ## Grupos y politicas en IAM 07:13
