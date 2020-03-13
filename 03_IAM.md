@@ -254,6 +254,65 @@ Si regresamos al panel IAM vemos que ya tenemos marcada la opción de **Aplicar 
 
 Por lo que ya hemos cumplido con todas las tareas dentro de IAM en cuanto a la configuración inicial de IAM.
 
-## Usuarios y politicas en IAM 07:33
-## Grupos y politicas en IAM 07:13
+## Usuarios y políticas en IAM 07:33
+
+* Crear, usar y gestionar usuarios en IAM
+* Entender las políticas de IAM
+* Como se aplican las políticas a los usuarios
+
+Imaginemos que tenemos el siguiente escenario:
+
+<img src="images/c3/3-escenario.png">
+
+Tenemos nuestra cuenta de AWS, tenemos configurado IAM, dentro de IAM tenemos un usuario llamado Jose, y tenemos el servicio S3 de AWS. Jose necesita acceder a S3 para almacenar archivos. 
+
+En este preciso momento con lo que tenemos configurado Jose no tiene acceso a S3.
+
+<img src="images/c3/3-escenario-2.png">
+
+Para eso nos serviran las políticas de acceso.
+
+<img src="images/c3/3-escenario-3.png">
+
+en partícular a Jsose le debemos aplicar la **política Full Access de S3** para que pueda tener acceso a S3.
+
+Para hacer esto en la consola nos vamos primero al panel de Usuarios en AWS.
+
+<img src="images/c3/3-escenario-4.png">
+
+Presionamos el usuario Jose.
+
+<img src="images/c3/3-escenario-5.png">
+
+Como podemos observar tenemos varias pestañas **Permisos Grupos Etiquetas** etc. Aquí nos va a interesar es la pestaña de **Permisos** la cual por el momento tiene asociada la poítica de `AdministratorAccess`, vamos a presionar el botón **Añadir permisos**.
+
+<img src="images/c3/3-escenario-6.png">
+
+Vamos a seleccionar **Asociar directamente las políticas existentes** en el buscador ponemos **S3** y seleccionamos **AmazonS3FullAccesss** y presionamos en **Siguiente: Revisar**.
+
+<img src="images/c3/3-escenario-7.png">
+
+Presionamos **Añadir permisos**.
+
+<img src="images/c3/3-escenario-8.png">
+
+como vemos Jose ya tiene permiso para S3.
+
+Es posible que tuvieramos mas usuarios en IAM pero que no tuvieran acceso a S3.
+
+<img src="images/c3/3-escenario-9.png">
+
+Vamos al panel de Usuarios para añadir los usuarios Miguel y David. 
+
+<img src="images/c3/3-escenario-10.png">
+
+Presionamos el botón **Añadir usuario(s)**.
+
+<img src="images/c3/3-escenario-11.png">
+
+
+
+
+## Grupos y políticas en IAM 07:13
+
 ## Roles en IAM 06:21
