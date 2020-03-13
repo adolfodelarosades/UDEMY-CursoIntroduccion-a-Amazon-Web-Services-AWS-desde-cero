@@ -194,9 +194,44 @@ Si regresamos al Paner de IAM la opción **Crear usuarios de IAM individuales** 
 
 #### Utilizar Grupos para Asignar Permisos
 
+* A menudo puede ser más conveniente y eficiente configurar grupos y asignar permisos al grupo en lugar de administrar a cada usuario individualmente.
 
+Vamos a utilizar grupos para asignar permisos, pulsamos en **Utilizar grupos para asignar permisos** y presionamos el botón **Administrar los grupos**.
+
+<img src="images/c3/3-grupos-1.png">
+
+Presionamos el botón **Crear un grupo**.
+
+<img src="images/c3/3-grupos-2.png">
+
+Introducimos el nombre `Admin_JMG` y presionamos el botón **Paso siguiente**.
+
+<img src="images/c3/3-grupos-3.png">
+
+Aquí podemos asociar todas las políticas necesarias al grupo, en este caso solo seleccionamos `AdministratorAccess` y pulsamos el botón **Paso siguiente**.
+
+<img src="images/c3/3-grupos-4.png">
+
+Finalmente pulsamos en **Crear un grupo**.
+
+<img src="images/c3/3-grupos-5.png">
+
+Como podemos ver ya tenemos creado el grupo Admin_JMG que tiene asignada la política `AdministratorAccess`, pero aun no tiene ningun usuario asignado. Si regresamos al panel de IAM, veremos que ya tenemos marcada la opción de **Utilizar grupos para asignar permisos**.
 
 #### Aplicar una Política de Contraseñas de IAM
+
+* Una política de contraseñas dicta las reglas de formato y caducidad que se deben seguir cuando un usuario crea o modifica su contraseña.
+
+* Estas reglas incluyen lo siguiente:
+   * Longitud
+   * Si son Case Sensitive
+   * Si requieren Números
+   * Si requieren caracteres No-AlfaNumericos
+   * Si el password expira
+   * Si el password se puede reusar.
+   
+   
+
 
 ## Usuarios y politicas en IAM 07:33
 ## Grupos y politicas en IAM 07:13
