@@ -361,6 +361,104 @@ Entramos en el usuario Jose.
 
 <img src="images/c3/3-escenario-19.png">
 
+Eliminamos la política `AmazonS3FullAccess` pulsando en la X, nos aparece un PopUp.
+
+<img src="images/c3/3-escenario-20.png">
+
+Pulsamos en **Desasociar**.
+
+<img src="images/c3/3-escenario-21.png">
+
+Podemos ver que ya elimino la política asociada `AmazonS3FullAccess`, repetimos lo mismo para los usuarios David y Miguel.
+
+Por lo que ahora mis tres usuarios Miguel, Jose y David ya no tienen acceso a S3.
+
+<img src="images/c3/3-escenario-22.png">
+
+Lo que vamos a hacer ahora es crear un **Grupo Desarrollo** 
+
+<img src="images/c3/3-escenario-23.png">
+
+Por lo que nos vamos a la consola en la sección de Grupos
+
+<img src="images/c3/3-escenario-24.png">
+
+Pulsamos en el botón **Crear un grupo**.
+
+<img src="images/c3/3-escenario-25.png">
+
+Metemos de nombre **Desarrollo** y pulsamos en el botón **Paso siguiente**.
+
+<img src="images/c3/3-escenario-26.png">
+
+Aquí aun no vamos a meter ninguna política por lo que presionamos **Paso siguiente**.
+
+<img src="images/c3/3-escenario-27.png">
+
+Presionamos botón **Crear un grupo**.
+
+<img src="images/c3/3-escenario-28.png">
+
+Ya tenemos un grupo vacío sin ningún usuario y sin ninguna política de acceso a ningún recurso de AWS.
+
+Lo siguiente que vamos a hacer es asignar los usuarios Miguel, Jose y David al grupo Desarrollo.
+
+<img src="images/c3/3-escenario-29.png">
+
+Por lo que seleccionamos el Grupo Desarrollo.
+
+<img src="images/c3/3-escenario-30.png">
+
+Presionamos el botón **Añadir usuarios al grupo**
+
+<img src="images/c3/3-escenario-31.png">
+
+Seleccionamos los usuarios David, Jose y Miguel y presionamos el botón **Añadir usuarios**
+
+<img src="images/c3/3-escenario-32.png">
+
+Con esto ya tenemos incluidos a los usuarios en el Grupo Desarrollo. Pero hasta el momento el Grupo Desarrollo no tiene acceso a S3.
+
+<img src="images/c3/3-escenario-33.png">
+
+Lo que vamos a hacer es asignarle la política `AmazonS3FullAccess` al grupo y esto implicitamente dara acceso a todos los usuarios que pertenezcan al grupo a S3.
+
+<img src="images/c3/3-escenario-34.png">
+
+Por lo que vamos a la pestaña **Permisos** en la sección **Grupos**.
+
+<img src="images/c3/3-escenario-35.png">
+
+Pulsamos **Asociar la política**.
+
+<img src="images/c3/3-escenario-36.png">
+
+Buscamos S3 y seleccionamos **AmazonS3FullAccess** y presionamos el botón **Asociar la política**
+
+<img src="images/c3/3-escenario-37.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
