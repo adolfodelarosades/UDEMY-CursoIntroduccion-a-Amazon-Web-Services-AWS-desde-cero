@@ -246,7 +246,11 @@ Presionamos el botón **Guardar los cambios**
 
 <img src="images/c3/3-pol-4.png">
 
-Se nos indicaa que **Se actualizó la política de contraseñas**. Si regresamos al panel IAM vemos que ya tenemos marcada la opción de **Aplicar una Política de Contraseñas de IAM**
+Se nos indica que **Se actualizó la política de contraseñas**. 
+
+Si regresamos al panel IAM vemos que ya tenemos marcada la opción de **Aplicar una Política de Contraseñas de IAM**
+
+<img src="images/c3/3-pol-5.png">
 
 Por lo que ya hemos cumplido con todas las tareas dentro de IAM en cuanto a la configuración inicial de IAM.
 
