@@ -470,31 +470,10 @@ Incluyamos a Jose nuevamente al grupo.
 
 <img src="images/c3/3-escenario-43.png">
 
+Con lo que el esquema final que tenemos es el siguiente:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<img src="images/c3/3-escenario-44.png">
 
 ## Roles en IAM 06:21
+
+
