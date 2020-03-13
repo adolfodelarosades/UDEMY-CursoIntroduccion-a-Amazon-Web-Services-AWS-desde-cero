@@ -142,6 +142,12 @@ Al entrar en IAM ya vemos que la opción **Activar MFA en la cuenta raíz** esta
 
 #### Crear Usuarios de IAM Individuales
 
+* Mejor practica en IAM es **NUNCA** usar la cuenta root para el día a día
+
+* Si quieres tener acceso de administrador completo, crea un usuario de IAM y adjunta la política de "AdministratorAccess" al usuario.
+
+* Luego usa esta nueva cuenta con acceso de administrador diariamente.
+
 #### Utilizar Grupos para Asignar Permisos
 
 #### Aplicar una Política de Contraseñas de IAM
