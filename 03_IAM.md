@@ -476,4 +476,28 @@ Con lo que el esquema final que tenemos es el siguiente:
 
 ## Roles en IAM 06:21
 
+* Crear, usar y gestionar roles en IAM
+* Entender como se aplican y se usan los roles
+
+Partiendo del último esquema, imaginemos que tenemos una instancia, una maquina virtual EC2 la cual quiere acceder al almacenamiento S3 en mi AWS. Es decir que tenemos un servicio de AWS(EC2) que quiere comunicarse con otro servicio de AWS(S3).
+
+<img src="images/c3/3-rol-1.png">
+
+Podriamos pensar que para que EC2 tenga acceso a S3 bastaría con agregar a EC2 la política de acceso `AmazonS3FullAccess`, pero EC2 no es un Usuario ni un Grupo es un Servicio de AWS por lo que esta opción no es correcta.
+
+<img src="images/c3/3-rol-2.png">
+
+En AWS **NO** podemos adjuntar políticas directamente a otros servicios de AWS. Con lo que en vez de adjuntar una política a un servicio de AWS lo que necesitamos adjutar es un **ROL**.
+
+<img src="images/c3/3-rol-3.png">
+
+Una vez que adjuntemos un Rol IAM al servicio de instancias de Amazon(EC2) nos dara permisos para acceder al servicio S3.
+
+**Lo que hace reamente un Rol es dar permisos a un servicio para que pueda interactar con otro servicio.**
+
+En el panel IAM seleccionamos la sección **Roles**
+
+
+
+
 
