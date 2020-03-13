@@ -543,5 +543,5 @@ Presionamos en **Asociar la política**.
 
 <img src="images/c3/3-poli-4.png">
 
-Con lo cual ya tenemos en el Grupo de Desarrollo con las políticas `AmazonS3FullAccess`, `AmazonEC2FullAccess` (Maquinas Virtuales) y `AmazonRDSFullAccess` (Acceso a BD).
+Con lo cual ya tenemos en el Grupo de Desarrollo con las políticas `AmazonS3FullAccess`, `AmazonEC2FullAccess` (Maquinas Virtuales) y `AmazonRDSFullAccess` (Acceso a BD), las cuales nos serviran en futuras lecciones.
 
