@@ -254,7 +254,7 @@ Si regresamos al panel IAM vemos que ya tenemos marcada la opción de **Aplicar 
 
 Por lo que ya hemos cumplido con todas las tareas dentro de IAM en cuanto a la configuración inicial de IAM.
 
-## Usuarios y políticas en IAM 07:33
+## Usuarios y Políticas en IAM 07:33
 
 * Crear, usar y gestionar usuarios en IAM
 * Entender las políticas de IAM
@@ -342,6 +342,27 @@ Como vemos ya tenemos nuestros 3 usuarios Jose, Miguel y David y los 3 tienen la
 
 **Unimos las políticas a los usuarios para permitir el acceso a los recursos de AWS.**
 
-## Grupos y políticas en IAM 07:13
+## Grupos y Políticas en IAM 07:13
+
+* Crear, usar y gestionar grupos en IAM.
+* Como se aplican las políticas a los grupos.
+
+Hasta el momento hemos creado tres usuarios y a cada uno de ellos le hemos dado acceso a S3 de manera individual, es decir asignando la política de acceso a S3 a cada uno de los usuarios, pero esta manera de gestionar los permisos no es la más adecuada, ya que si crece el numero de usuarios, debemos asignar las políticas de acceso a cada uno de ellos complicandose la gestión.
+
+Recordemos que uno de los usos comunes de IAM ademas de administrar Usuarios y Políticas también administra Grupos. 
+
+Por lo que vamos a eliminar la política `AmazonS3FullAccess` de cada uno de los usuarios.
+
+Entramos al panel de Usuarios.
+
+<img src="images/c3/3-escenario-17.png">
+
+Entramos en el usuario Jose.
+
+<img src="images/c3/3-escenario-19.png">
+
+
+
+
 
 ## Roles en IAM 06:21
