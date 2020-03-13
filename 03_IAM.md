@@ -310,8 +310,37 @@ Presionamos el botón **Añadir usuario(s)**.
 
 <img src="images/c3/3-escenario-11.png">
 
+Introducimos los dos usuarios que queremos crear y su password. Presionamos el botón **Siguiente: permisos**.
 
+Actualmente Miguel y David no tendran acceso a S3.
 
+<img src="images/c3/3-escenario-12.png">
+
+Por lo que vamos a dar en **Asociar directamente las políticas existentes** y buscamos S3, para seleccionar **AmazonS3FullAccess** 
+
+<img src="images/c3/3-escenario-13.png">
+
+Presionamos **Siguiente: etiqueta**.
+
+<img src="images/c3/3-escenario-14.png">
+
+Presionamos **Siguiente: revisar**.
+
+<img src="images/c3/3-escenario-15.png">
+
+Presinamos en el botón **Crear usuarios**.
+
+<img src="images/c3/3-escenario-16.png">
+
+Precionamos en **Cerrar**
+
+<img src="images/c3/3-escenario-17.png">
+
+Como vemos ya tenemos nuestros 3 usuarios Jose, Miguel y David y los 3 tienen la politica adjuntada de Full Access S3 por lo que podrán tener acceso a S3.
+
+<img src="images/c3/3-escenario-18.png">
+
+**Unimos las políticas a los usuarios para permitir el acceso a los recursos de AWS.**
 
 ## Grupos y políticas en IAM 07:13
 
