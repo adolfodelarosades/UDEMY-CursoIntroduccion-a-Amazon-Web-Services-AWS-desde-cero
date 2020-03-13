@@ -479,6 +479,8 @@ Con lo que el esquema final que tenemos es el siguiente:
 * Crear, usar y gestionar roles en IAM
 * Entender como se aplican y se usan los roles
 
+### Crear, usar y gestionar roles en IAM
+
 Partiendo del último esquema, imaginemos que tenemos una instancia, una maquina virtual EC2 la cual quiere acceder al almacenamiento S3 en mi AWS. Es decir que tenemos un servicio de AWS(EC2) que quiere comunicarse con otro servicio de AWS(S3).
 
 <img src="images/c3/3-rol-1.png">
@@ -497,7 +499,49 @@ Una vez que adjuntemos un Rol IAM al servicio de instancias de Amazon(EC2) nos d
 
 En el panel IAM seleccionamos la sección **Roles**
 
+<img src="images/c3/3-rol-4.png">
 
+Presionamos el botón **Crear un rol**.
 
+<img src="images/c3/3-rol-5.png">
 
+Vemos todos los diferentes roles que podemos asignar a los distintos servicios de AWS. En este caso seleccionamos EC2 y presionamos en **Siguiente: Permisos**.
+
+<img src="images/c3/3-rol-6.png">
+
+Vamos a asignar a este Rol la política `AmazonS3FullAccess`, con lo que podemos pensar que un rol, es casi como un grupo que asignamos a servicios en lugar de asignarlo a usuarios. Presionamos **Siguiente: Etiquetas**.
+
+<img src="images/c3/3-rol-7.png">
+
+Presionamos **Siguiente: Revisar**.
+
+<img src="images/c3/3-rol-8.png">
+
+Damos el nombre de rol **Role_Desarrollo** y presionamos el botón **Crear un rol**.
+
+<img src="images/c3/3-rol-9.png">
+
+Con esto vemos que hemos creado el rol **Role_Desarrollo**, el cual va a permitir que el servicio de EC2, de maquina virtual, pueda interactuar con otro servicio en este caso S3. 
+
+### Asignación de 2 nuevas Políticas al Grupo de Desarrollo
+
+Vamos a la sección de **Groups** en la pestaña **Permisos**
+
+<img src="images/c3/3-poli-1.png">
+
+Presionamos en **Asociar la política**.
+
+Buscamos `AmazonEC2FullAccess` y la marcamos.
+
+<img src="images/c3/3-poli-2.png">
+
+Buscamos `AmazonRDSFullAccess` y la marcamos.
+
+<img src="images/c3/3-poli-3.png">
+
+Presionamos en **Asociar la política**.
+
+<img src="images/c3/3-poli-4.png">
+
+Con lo cual ya tenemos en el Grupo de Desarrollo con las políticas `AmazonS3FullAccess`, `AmazonEC2FullAccess` (Maquinas Virtuales) y `AmazonRDSFullAccess` (Acceso a BD).
 
