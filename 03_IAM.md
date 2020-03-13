@@ -423,8 +423,6 @@ Con esto ya tenemos incluidos a los usuarios en el Grupo Desarrollo. Pero hasta 
 
 Lo que vamos a hacer es asignarle la política `AmazonS3FullAccess` al grupo y esto implicitamente dara acceso a todos los usuarios que pertenezcan al grupo a S3.
 
-<img src="images/c3/3-escenario-34.png">
-
 Por lo que vamos a la pestaña **Permisos** en la sección **Grupos**.
 
 <img src="images/c3/3-escenario-35.png">
@@ -436,6 +434,42 @@ Pulsamos **Asociar la política**.
 Buscamos S3 y seleccionamos **AmazonS3FullAccess** y presionamos el botón **Asociar la política**
 
 <img src="images/c3/3-escenario-37.png">
+
+De esta manera hemos asociado la política `AmazonS3FullAccess` a nuestro Grupo Desarrollo.
+
+<img src="images/c3/3-escenario-34.png">
+
+Con esto hemos logrado dar acceso a S3 a todos los usuarios que pertenecen al Grupo Desarrollo, teniendo la gran ventaja de que no fue necesario asociar la política a cada uno de los usuarios, basto hacerlo al grupo a cual pertenecian, es decir asociamos la política una sola vez en vez de 3, si fueran 10 o más usuarios se ven las ventajas se haria solo una vez.
+
+Si borramos el usuario Jose del Grupo Desarrollo, Jose piede el acceso a S3.
+
+<img src="images/c3/3-escenario-38.png">
+
+Vamos a borrarlo. Vamos a la pestaña **Usuarios** de la sección Grupo.
+
+<img src="images/c3/3-escenario-39.png">
+
+Seleccionamos **Eliminar al usuario del grupo** para Jose.
+
+<img src="images/c3/3-escenario-40.png">
+
+Nos sale un PopUp para confirmar la eliminación, pulsamos en **Quitar del grupo**.
+
+<img src="images/c3/3-escenario-41.png">
+
+Con esto tenemos que como Jose ya no pertenece al Grupo Desarrollo y por consecuencia a dejado de tener acceso a S3.
+
+<img src="images/c3/3-escenario-42.png">
+
+Para que Jose vuelva a tener acceso a S3 tenemos dos opciones.
+
+* Asociar la política de acceso a Jose.
+* Incluir a Jose en el grupo nuevamente.
+
+Incluyamos a Jose nuevamente al grupo.
+
+<img src="images/c3/3-escenario-43.png">
+
 
 
 
