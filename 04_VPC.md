@@ -109,6 +109,64 @@ Con esto terminamos este amplio resumen a los servicios de infraestructura de AW
 
 ## Introducción a VPC 13:14
 
+* Definición de las VPCs
+* Discución conceptual de las VPCs
+* Componentes en las VPCs
+* Flujo de datos dentro de las VPCs
+* Acceso a las VPCs desde la consola AWS
+
+Para acceder a las VPC en la consola de Amazon la encontramos en la Sección **Redes y entrega de Contenido**
+
+<img src="images/c4/4-1-6.png">
+
+Si damos click en VPC veremos el VPC Dashboard:
+
+<img src="images/c4/4-1-7.png">
+
+### Definición de las VPCs
+
+* ¿Qué es una VPC (Virtual Private Cloud) JMG
+   
+   * Es una subsección privada de AWS que **TU** controlas y en la que puedes meter los recursos de AWS como instancias EC2 y BD.
+   * Tu tienes el control TOTAL sobre quien tiene acceso a los recursos de AWS que vas a instalar dentro de tu VPC.
+   
+* ¿Qué es una VPC según AWS?
+
+   * La nube privada virtual de Amazon te permite aprovisionar una sección aislada de la nube de Amazon Web Services (AWS) donde puedes iniciar recursos en una red virtual que tu defines.
+   * Tendrás control total sobre tu entorno de red virtual, incluyendo la sección de tu propio rango de direcciones IP, la creación de subredes y configuración de tablas de rutas y puertas de enlace de red.
+   
+**Cuando creas una cuenta AWS, se crea una VPC por defecto**
+
+Por lo que en nuestro VPC Dashboard vemos que ya tenemos un VPC, también vemos que se han creado 3 Subnets, se ha creado 1 Route Tables, 1 Network ACLs, 1 Security Groups, 1 Internet Gateways y 1 DHCP options sets.
+
+AWS crea todo esto para que podamos tener una VPC completamente funcional para poder desplegar instancias y que todo funcione correctamente y **totalmente Gratuita**.
+
+Para entender que es una VPC podemos pensar que es muy similar a la red de nuestra casa.
+
+<img src="images/c4/4-1-8.png">
+
+En la red de nuestra casa tenemos cables que vienen de Internet/ISP los cuales se conectan al Router, es posible que tengamos instalado un Firewall para evitar que entre trafico no deseado antes de conectar todos nuestros dispositivos a Internet.
+
+¿Qué pasa si se cae el cable que se conecta desde el Router con el proveedor de Internet?
+
+<img src="images/c4/4-1-9.png">
+
+Ninguno de los dispositivos conectados en nuestra red privada en casa podría salir a Internet, pero las maquinas entre si podrían hablar perfectamente ya que estan conectadas a través del Router y la conexión con el Router esta funcionando perfectamente.
+
+¿Qué pasa si lo que se cae es el Router?
+
+<img src="images/c4/4-1-10.png">   
+
+Que todos los dispositivos conectados al Router no podrían conectarse entre ellos. 
+
+
+
+### Discución conceptual de las VPCs
+### Componentes en las VPCs
+### Flujo de datos dentro de las VPCs
+### Acceso a las VPCs desde la consola AWS
+
+
 ## Internet Gateways (IGW) 07:43
 
 ## Tablas de rutas (RTs) 10:32
