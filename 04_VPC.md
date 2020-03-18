@@ -10,16 +10,6 @@
 
 ## Infraestructura Global en AWS 10:13
 
-En esta sección vamos a profundizar bastante en el componente estrella de Amazon, que es donde esta la mayoría de la funcionalidad de AWS, porsupuesto hablamos de VPC. 
-
-Hasta el momento hemos constrido esto:
-
-<img src="images/c4/4-0.png">
-
-En esta sección construiremos lo siguiente:
-
-<img src="images/c4/4-1.png">
-
 ###  Temas incluidos en esta lección
 
 * Visión de la infraestructura global de AWS
@@ -29,7 +19,16 @@ En esta sección construiremos lo siguiente:
    * Tablas de rutas
    * Subredes
    * Network Access Control List (NACL)
+   
+En esta sección vamos a profundizar bastante en el componente estrella de Amazon, que es donde esta la mayoría de la funcionalidad de AWS, porsupuesto hablamos de VPC. 
 
+Hasta el momento hemos construído esto:
+
+<img src="images/c4/4-0.png">
+
+En esta sección construiremos lo siguiente:
+
+<img src="images/c4/4-1.png">
 
 ### Visión de la infraestructura global de AWS
 
