@@ -10,16 +10,10 @@
 
 ## Infraestructura Global en AWS 10:13
 
-###  Temas incluidos en esta lección
+* Regiones
+* Availability Zones (AZs)
+* Data Centers
 
-* Visión de la infraestructura global de AWS
-* Introducción y explicación de las VPCs
-* Como viajan los datos a través de AWS:
-   * Internet Gateways
-   * Tablas de rutas
-   * Subredes
-   * Network Access Control List (NACL)
-   
 En esta sección vamos a profundizar bastante en el componente estrella de Amazon, que es donde esta la mayoría de la funcionalidad de AWS, porsupuesto hablamos de VPC. 
 
 Hasta el momento hemos construído esto:
@@ -30,13 +24,8 @@ En esta sección construiremos lo siguiente:
 
 <img src="images/c4/4-1.png">
 
-### Visión de la infraestructura global de AWS
 
-* Regiones
-* Availability Zones (AZs)
-* Data Centers
-
-#### Regiones
+### Regiones
 
 ¿Qué son las regiones de AWS?
 
@@ -66,7 +55,7 @@ Otra cosa muy importante a destacar en este gráfico es que cada región está c
 
 Con lo que te estarás preguntando qué es una zona de disponibilidad en AWS.
 
-#### Availability Zones (AZs)
+### Availability Zones (AZs)
 
 ¿Qué son las Availability Zones (AZs) en AWS?
 
@@ -96,7 +85,7 @@ Pues imagínate que una de las AZs se cae porque ha habido un huracán o un ince
 
 Con lo que en resumen las zonas de disponibilidad, nos proporciona la arquitectura en alta disponibilidad para todos los servicios que vayamos a poner en AWS.
 
-#### Data Centers
+### Data Centers
 
 Los Data Centers es donde se encuentra el hardware físico que ejecuta los servicios de AWS.
 
@@ -117,20 +106,6 @@ Es decir todo lo que vamos a crear desde la GUI, desde la consola de Amazon, res
 Si estoy en la región de Irlanda, donde tengo 3 AZs o tres centros de datos diferentes para dotar de alta disponibilidad a los servicios que vaya a albergar en esta zona de disponibilidad, con lo que cuando vaya a crear nuevos servicios en la zona de Irlanda, esos servicios van a quedar albergados en esta región de Europa, que a su vez se crearán en alguna de las tres zonas de disponibilidad que tiene la región de Irlanda y que a su vez se crearán en un centro de datos físicos.
 
 Con esto terminamos este amplio resumen a los servicios de infraestructura de AWS.
-
-### Introducción y explicación de las VPCs
-
-### Como viajan los datos a través de AWS:
-
-#### Internet Gateways
-
-#### Tablas de rutas
-
-#### Subredes
-
-#### Network Access Control List (NACL)
-
-
 
 ## Introducción a VPC 13:14
 
