@@ -291,8 +291,42 @@ Detalles y reglas de los IGW que necesita saber:
 * Solo 1 IGW puede ser conectado a tu VPC a la vez.
 * Un IGW no puede ser desconectado de tu VPC mientras haya recursos corriendo (instancias EC2 o base de datos RDS).
 
-
 ## Tablas de rutas (RTs) 10:32
+
+* Definición de una tabla de rutas
+* Funciones de las tablas de rutas
+* Creando y borrando tablas de rutas
+* Configurando nuevas rutas en las tablas de rutas.
+
+### Definición de una tabla de rutas
+
+* ¿Qué es una tabla de rutas según JMG?
+   * Una tabla de rutas contiene un conjunto de reglas, llamadas rutas, que se utilizan para determinar hacia dónde se dirige el tráfico de red.
+   
+**Tu VPC por defecto ya tiene una tabla de rutas llamada principal**
+
+<img src="images/c4/4-1-24.png"> 
+
+### Acceso a la Tabla de Rutas desde la consola AWS
+
+En el VPC Dashboard seleccionamos en la lista de opciones **Route Tables**
+
+<img src="images/c4/4-1-25.png"> 
+
+Sabemos que es la Tabla de Rutas principal por que existe una columna **Main** marcada con **Yes**.
+
+### Funciones de las tablas de rutas
+
+Como vemos en el siguiente diagrama después del Internet Gateway tenemos nuestra tabla de rutas.
+
+<img src="images/c4/4-1-11.png"> 
+
+Así cuando una instancia EC2 requiere alguna solicitud web, el dato llega desde Internet pasa por el Internet Gateway y es la tabla de rutas la qiue ruta el paquete hacia una u otra subred.
+ 
+
+
+### Creando y borrando tablas de rutas
+### Configurando nuevas rutas en las tablas de rutas.
 
 ## Network Access Control List (NACLs) 23:09
 
