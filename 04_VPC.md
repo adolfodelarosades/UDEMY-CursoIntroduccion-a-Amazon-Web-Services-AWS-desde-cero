@@ -165,7 +165,6 @@ Que todos los dispositivos conectados al Router no podrían conectarse entre ell
 
 Como ves son posibles escenarios que pueden pasar en tu red virtual en casa muy parecido a lo que es una VPC.
 
-
 ### Componentes en las VPCs
 
 Si te das cuenta los componentes de una VPN son muy similares a los componentes que te he mostrado de tu red privada en casa, tenemos el acceso a Internet el cual se conecta con un **Internet Gateway**, en la conexión de tu casa es el **cable DSL o de fibra**.
@@ -205,6 +204,93 @@ Así que el flujo de datos en una VPC es casi exactamente igual que el flujo de 
    4. Subredes para provisionar recursos AWS(instancias EC2).
    
 ## Internet Gateways (IGW) 07:43
+
+* Definición de un IGW
+* Funciones de un IGW
+* Conexión de un IGW
+* Creación de IGW
+* Reglas básicas en los IGW
+
+### Definición de un IGW
+
+* ¿Qué es un IGW (**I**nternet **G**ate**w**ay) según JMG
+   * Una combinación de hardware y software que proporciona a tu red privada una ruta hacia el exterior(internet) de la VPC.
+   
+* ¿Qué es un IGW según AWS?
+   * Una puerta de enlace de Internet es un componente de tu VPC que escala horizontalmente, redundante y altamente disponible que te permite la comunicación entre las instancias de tu VPC e Internet.
+   * No impone restricciones de riesgo de disponibilidad ni de ancho de banda en el tráfico de tu red.
+   
+**Tu VPC por defecto ya tiene conectado un IGW a internet**
+
+<img src="images/c4/4-1-11.png"> 
+
+### Acceso a IGW desde la consola AWS
+
+En el VPC Dashboard seleccionamos en la lista de opciones **Internet Gateways**
+
+<img src="images/c4/4-1-12.png"> 
+
+Se puede observar el ID de la VPC a la cual este IGW esta conectado. El **State attached** significa que esta conectado por un lado a Internet y por otro a nuestra VPC. Por lo que cualquier instancia que pongamos en nuestras subredes tendra entrada y salida a Internet.
+
+Podría desconectar mi IGW de mi VPC si selecciono en el menú **Actions** la opción **Detach from VPC**.
+
+<img src="images/c4/4-1-13.png"> 
+
+<img src="images/c4/4-1-14.png"> 
+
+<img src="images/c4/4-1-15.png"> 
+
+Realmente lo que ha pasado cuando he desconectado mi IGW, es que el IGW se ha ido como dispositivo de mi VPC, ya no existe. No se puede salir ni entrar a Internet.
+
+<img src="images/c4/4-1-16.png"> 
+
+Realmente el IGW todavía esta en la cuenta gratuita pero ya ya no esta dentro del VPN.
+
+Las dos instancias EC2 que tenemos se pueden comunicar entre ellas por la tabla de rutas pero no pueden salir a Internet. 
+
+### Conexión de un IGW
+
+Vamos a volver a conectar el IGW que tenemos a la VPC
+
+Del menú **Actions** seleccionamos la opción **Attach to VPC**.
+
+<img src="images/c4/4-1-17.png"> 
+
+Se nos pide asociar la VPC.
+
+<img src="images/c4/4-1-18.png"> 
+
+Y presionamos el botón Attach.
+
+<img src="images/c4/4-1-19.png"> 
+
+Con lo que vuelvo a tener mi IGW asociado a mi VPC, volviendo conexión a Internet.
+
+<img src="images/c4/4-1-11.png"> 
+
+### Creación de IGW
+
+Para crear otro IGW basta pulsar en el botón **Create internet gateway** 
+
+<img src="images/c4/4-1-20.png"> 
+
+Nos pide un nombre y pulsamos el botón **Create**
+
+<img src="images/c4/4-1-21.png"> 
+
+<img src="images/c4/4-1-22.png"> 
+
+Acaba de crearse un nuevo IGW su estado es desconectado y puedo conectarlo a otra VPC que pueda tener. En este caso no permitira conectarlo a la misma VPC por que solo puede haber un IGW por VPN. 
+
+<img src="images/c4/4-1-23.png"> 
+
+### Reglas básicas en los IGW
+
+Detalles y reglas de los IGW que necesita saber:
+
+* Solo 1 IGW puede ser conectado a tu VPC a la vez.
+* Un IGW no puede ser desconectado de tu VPC mientras haya recursos corriendo (instancias EC2 o base de datos RDS).
+
 
 ## Tablas de rutas (RTs) 10:32
 
