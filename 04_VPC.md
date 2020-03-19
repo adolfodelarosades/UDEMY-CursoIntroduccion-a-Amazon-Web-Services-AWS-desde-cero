@@ -115,6 +115,8 @@ Con esto terminamos este amplio resumen a los servicios de infraestructura de AW
 * Flujo de datos dentro de las VPCs
 * Acceso a las VPCs desde la consola AWS
 
+### Acceso a las VPCs desde la consola AWS
+
 Para acceder a las VPC en la consola de Amazon la encontramos en la Sección **Redes y entrega de Contenido**
 
 <img src="images/c4/4-1-6.png">
@@ -141,6 +143,8 @@ Por lo que en nuestro VPC Dashboard vemos que ya tenemos un VPC, también vemos 
 
 AWS crea todo esto para que podamos tener una VPC completamente funcional para poder desplegar instancias y que todo funcione correctamente y **totalmente Gratuita**.
 
+### Discución conceptual de las VPCs
+
 Para entender que es una VPC podemos pensar que es muy similar a la red de nuestra casa.
 
 <img src="images/c4/4-1-8.png">
@@ -159,14 +163,47 @@ Ninguno de los dispositivos conectados en nuestra red privada en casa podría sa
 
 Que todos los dispositivos conectados al Router no podrían conectarse entre ellos. 
 
+Como ves son posibles escenarios que pueden pasar en tu red virtual en casa muy parecido a lo que es una VPC.
 
 
-### Discución conceptual de las VPCs
 ### Componentes en las VPCs
+
+Si te das cuenta los componentes de una VPN son muy similares a los componentes que te he mostrado de tu red privada en casa, tenemos el acceso a Internet el cual se conecta con un **Internet Gateway**, en la conexión de tu casa es el **cable DSL o de fibra**.
+
+<img src="images/c4/4-1-11.png"> 
+
+En seguida tenemos **tablas de rutas** que equivale al router en la red privada en casa.
+
+Después de estas tablas de rutas tenemos en Amazon **Network Access Control List (NACL)** que sería muy similar al **Firewall** que puedes tener en tu red privada en casa.
+
+Y en lugar de tener **PCs o teléfonos inteligentes smartphones** lo que tenemos en nuestra VPC son **instancias de EC2 o máquinas virtuales**.
+
+He querido hacer esta comparación para que no te asustes cuando vayamos a hacer los laboratorios o expliquemos el concepto de la VPC porque realmente estamos hablando de Internet Gateways, de tablas de rutas, de Network Access Control Listy de instancias.
+
+Haciendo esta comparación con tu red privada en casa tendrás más fácil la posibilidad de entender cómo administrar, instalar y gestionar una VPC y todos los componentes dentro de esa VPC en AWS.
+
 ### Flujo de datos dentro de las VPCs
-### Acceso a las VPCs desde la consola AWS
 
+Así que el flujo de datos que va a ocurrir en una VPC es muy parecido al flujo de datos que tendrás también en tu red privada en casa.
 
+Es decir si en el EC2 tenemos una instancia la cual quieres salir a Internet para ver una página web esta petición va a pasar por el Network Access Control List que va a decir si este protocolo está abierto o no si está abierto va a pasar a nuestra tabla de rutas que sería como el router que tienes en tu casa y este router se lo va a pasar al Internet Gateway que sería como el cable de ADSL o de fibra que te conecta en la red privade de casa y este conecta con tu proveedor de Internet.
+
+Así que el flujo de datos en una VPC es casi exactamente igual que el flujo de datos que puedas tener desde un dispositivo móvil o un PC portátil en una red privada de tu casa.
+
+**Recuerda**
+
+* ¿Qué es una VPC?
+
+   * La nube privada virtual de amazon te permite aprovisionar una sección aislada de la nube de Amazon Web Services (AWS) donde puedes iniciar recursos de AWS en una red virtual que tu defines.
+   * Tendrás control total sobre tu entorno de red virtual, incluyendo la sección dee tu propio rango de direcciones IP, la creación de subredes y configuración de tablas de rutas y puertas de enlace de red.
+
+* Cuando creas una cuenta en AWS, se crea una VPC por defectocon los siguientes componentes que se necesitan para hacerla funcionar:
+
+   1. Internet Gateway (GW).
+   2. Una tabla de rutas(con rutas a las subredes por defecto).
+   3. Un NACL (con reglas predefinidas para garantizar acceso).
+   4. Subredes para provisionar recursos AWS(instancias EC2).
+   
 ## Internet Gateways (IGW) 07:43
 
 ## Tablas de rutas (RTs) 10:32
