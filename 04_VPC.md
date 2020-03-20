@@ -398,11 +398,27 @@ Ingresamos un nombre y la adjuntamos a la única VPC que tenemos, presionamos el
 
 <img src="images/c4/4-1-35.png">
 
-Con esto tenemos nuestra nueva tabla de rutas la cual no es principal ni tampoco tiene asociada una subred. Si la seleccionamos veremos que no esta conectada a ningún IGW. Como si la tiene la primer tabla de rutas.
+Con esto tenemos nuestra nueva tabla de rutas la cual no es principal ni tampoco tiene asociada una subred. Si la seleccionamos veremos que no esta conectada a ningún IGW, como si la tiene la primer tabla de rutas.
 
+<img src="images/c4/4-1-36.png">
 
+Como hemos visto en las reglas de las tablas de rutas **No puedes borrar una tabla de rutas si esta tiene dependencias como subredes asociadas**, vamos a intentar borrar nuestra primar tabla de rutas la que si tiene asociado el IGW. Seleccionando la opción **Delete Route Table** 
 
-### Configurando nuevas rutas en las tablas de rutas.
+<img src="images/c4/4-1-37.png">
+
+Se nos indica que no es posible eliminar esta tabla de rutas.
+
+<img src="images/c4/4-1-38.png">
+
+Probemos a eliminar la otra tabla de rutas.
+
+<img src="images/c4/4-1-39.png">
+
+La hemos podido eliminar sin ningún problema: 
+
+<img src="images/c4/4-1-40.png">
+
+Con lo que debemos tener muy claro que a diferencia de los IGW que solo se permite tener uno por VPC, podemos tener multiples tablas de rutas, pero no pueden ser eliminadas si estas tiene dependencias.
 
 ## Network Access Control List (NACLs) 23:09
 
