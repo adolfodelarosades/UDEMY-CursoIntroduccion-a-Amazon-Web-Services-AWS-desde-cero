@@ -422,6 +422,76 @@ Con lo que debemos tener muy claro que a diferencia de los IGW que solo se permi
 
 ## Network Access Control List (NACLs) 23:09
 
+* Definición de un NACLs
+* Función de los NACLs
+* Creación de un NACLs
+* Gestión de reglas en los NACLs
+
+### Definición de un NACLs
+
+* ¿Qué es un NACLs según JMG?
+   * Una lista de control de acceso a la red (NACLs) es una capa opcional de seguridad para tu VPC que actua como un firewall para controlar el tráfico dentro y fuera de una o más subredes.
+   
+<img src="images/c4/4-1-41.png">
+
+**Tu VPC por defecto ya tiene una NACLs asociada con las subredes**
+
+### Acceso a los TNACLs  desde la consola AWS
+
+En el VPC Dashboard en la sección de **Security** seleccionamos en la opcion **Network ACLs**
+
+<img src="images/c4/4-1-42.png"> 
+
+Como podemos ver tenemos nuestra NACL por defecto asociada con nuestras tres subredes que también se crearon por defecto y no indica que esta asociada a nuestra VPC.
+
+Si marcamos nuesta NACL y damos clic en la pestaña **Subnet associations** veremos la lista de nuestras subredes asociadas.
+
+<img src="images/c4/4-1-43.png"> 
+
+Podemos apreciar los **ID** y los **CIDR** de cada subred.
+
+### Función de los NACLs
+
+En nuestro diagrama podemos apreciar claramente donde se ubican las NACLs. Se situan entre las tablas de rutas y nuestras subredes que es donde pondremos nuestras instancias EC2 y nuestras BD. 
+
+<img src="images/c4/4-1-44.png">
+
+Cuando el trafico entra por Internet a través del IGW llega a las tablas de rutas que definen a que red envíar el trafico y justamente antes de que la subred acepte el trafico golpea en Network Access Control List(NACL), es decir que si el paquete es aceptado entrara a la subred y si no hara un drop  o descarta el paquete que no fue aceptado por nuestros NACLs. 
+
+Lo mismo ocurre en sentido inverso es decir si la maquina virtual o instancia quiere comunicarse con Internet, el paquete se manda a la NACL la cual verificara si el paquete debe o no salir si no lo esta el paquete se descartara y si si lo esta el paquete llegara a la tabla de rutas de allí al IGW y de allí a Internet.
+
+### Reglas en los NACLs
+
+Por lo que es muy importantye entender que los NACLs tienen dos tipos de reglas:
+
+* **Reglas Inbound**: Son las reglas que se aplican al trafico que entra de Internet hacia nuestras subredes
+* **Reglas Outbound**: Son las reglas que se aplican al trafico que sale de nuestras subredes a Internet
+
+<img src="images/c4/4-1-45.png">
+
+Estos dos tipos de reglas se pueden complicar por que podemos tener diferentes protocolos y puertos en las reglas Inbound de los que se aplican en las reglas Outbound. 
+
+**El NACL creado por defecto permite todo el trafico Inbound y todo el trafico Outbound**
+
+Esto lo podemos ver en la consola si seleccionamos las pestañas **Inbound Rules** y **Outbound Rules**.
+
+<img src="images/c4/4-1-46.png">
+
+<img src="images/c4/4-1-47.png">
+
+Tenemos una regla que nos permite todos los protocolos y todos los puertos desde/hacia Internet. Por lo que todo esta permitido que entre y salga a través de nuestro NACL.
+
+
+
+
+
+
+ 
+
+
+### Creación de un NACLs
+### Gestión de reglas en los NACLs
+
 ## Subredes 15:18
 
 ## Availability Zones (AZs) 19:48
