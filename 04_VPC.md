@@ -542,127 +542,105 @@ Vamos a volver a Editar las reglas Inbound y vamos a añadir otra regla esta vez
 
 <img src="images/c4/4-1-54.png">
 
-importante a esta regla que estamos añadiendo le vamos a decir Bnei con lo cual la salvamos.
+Importante a esta regla que estamos añadiendo le vamos a decir DENY y presionamos el botón **Save**.
 
 Y qué crees que pasará ahora.
 
-Tenemos una regla con el número 80 que permite el tráfico entrante de tener a su red a distancia pues
+Tenemos una regla con el número 80 que permite el tráfico entrante de Internet a la subredes a la instancia por el puerto 80 por el puerto web y tenemos otra regla con el número 90 que deniega el mismo tráfico, el tráfico HTTP.
 
-puerto 80 por el puerto web y tenemos otra regla con el número 90 que deniega el mismo tráfico el tráfico
-
-HTTP.
+<img src="images/c4/4-1-55.png">
 
 Qué crees que pasará.
 
-Podré ver mi servidor web desde internet o no podré ver mi servidor web de Internet.
+Podré ver mi servidor web desde internet o no podré ver mi servidor web desde Internet.
 
-Esa sería la pregunta para ti si tu respuesta es que estoy permitiendo ver mi tráfico web mi servidor
+Esa sería la pregunta para ti, si tu respuesta es que estoy permitiendo ver mi tráfico web, mi servidor web desde Internet, estás en lo correcto, porque la primera regla es que las reglas son evaluadas del número más pequeño al número más alto.
 
-web desde Internet.
+Cuál es la regla con el número más pequeño 80. El tipo de tráfico es el HTTP y permitó obviamente este tráfico, por lo cual si tengo otra regla que la deniega, esta regla no se aplicaría.
 
-Estás en lo correcto porque como digo la primera regla es que las reglas son evaluadas del número más
+Así que recuerda, la regla inmediatamente aplica el tráfico y se ejecuta con independencia de las reglas que vengan a posteriori.
 
-pequeño el número más alto.
+En este caso la regla que viene a posteriori es denegar el tráfico HTTP o el tráfico web.
 
-Cuál es la regla con el número más pequeño 80.
+Pero como ya lo he permitido con la regla 80 la aplico y se ejecuta, con lo cual podrás entrar a nuestro servidor web.
 
-El tipo de tráfico es el HTTP y permitó.
+Vamos a complicarlo más y voy a editar otra vez las reglas inbound y esta regla que deniega el tráfico HTTP con el número 90 le voy a poner el número 70.
 
-Obviamente este tráfico lo cual si tengo otra regla que la deniega ya esta regla no se aplicaría así
-
-que recuerda la regla inmediatamente aplica el tráfico y se ejecuta con independencia de las reglas
-
-que vengan a posteriori.
-
-En este caso la Arela que viene a posteriori es denegar el tráfico HTTP o el tráfico web.
-
-Pero como ya lo he permitido Volare la 80 la aplico y se ejecuta con lo cual podrás entrar a nuestro
-
-servidor web con estas reglas que acabo de soñar aquí bien vamos a complicarlo más y voy a evitar otra
-
-vez las reglas inbound y esta regla que deniega el tráfico HTTP con el número 90 le voy a poner el número
-
-70.
+<img src="images/c4/4-1-56.png">
 
 Voy a salvar estas reglas y vamos a ver qué pasará ahora.
 
-Podríamos ver nuestro servidor web desde internet o no esta sería nuevamente otra pregunta para ti.
+<img src="images/c4/4-1-57.png">
 
-Se ha dicho que ahora nadie podrá ver nuestro servidor web nuestro tráfico web o nuestra página web.
+Podríamos ver nuestro servidor web desde internet o no, esta sería nuevamente otra pregunta para ti.
 
-Estás en lo correcto porque la regla número 70 que es la primera con el número más pequeño es ejecutada
+Si ha dicho que ahora nadie podrá ver nuestro servidor web, nuestro tráfico web o nuestra página web, estás en lo correcto porque la regla número 70 que es la primera con el número más pequeño es ejecutada primero y decimos DENY, denegar, con lo cual aunque tengas una regla posterior que permite ese tráfico ya te ha denegando en la regla 70.
 
-primero y como es el protocolo 80 decimos denegar con lo cual aunque tengas una regla posterior que
+Esto es muy importante para que entiendas el tema de las propiedades y quién es evaluada y ejecutada antes.
 
-permite ese tráfico ya te denegando en la regla 70.
+Pero antes de hablar de estas NACL por defecto y NACL nuevas vamos a cambiar las reglas para que puedan entrar vía HTTP a mis servidores web con lo que cambiando el número de 70 a 90 se vuelve a permitir tráfico desde internet a mi servidor web via HTTP puerto 80.
 
-Esto es muy importante para que entiendas el tema de las propiedades y quién es evaluada y ejecutada
+### Creación de un NACLs
 
-antes bien sigamos con la presentación y hablemos ahora de la naquel por defecto que tenemos creada
+Hablemos ahora de la NACL por defecto que tenemos creada en nuestra VPC y de las NACL nuevas que vayas a crear en tu VPC.
 
-en nuestra web pecé y de las naquel nuevas que vayas a crear en tu PC.
+<img src="images/c4/4-1-58.png">
 
-Pero antes de hablar de estas Nakis por defecto y Nakis nuevas vamos a cambiar estas reglas para que
+Tenemos una NACL por defecto pero también podemos crear una NACL nueva haciendo clic en la opción **Create network ACL**
 
-obviamente puedan entrar vía HTTP a mis servidores web con lo que con este cambio cambiando el número
 
-de la arena ahora vuelve a permitir tráfico desde internet a mi servidor web via HTTP puerto 80.
+<img src="images/c4/4-1-59.png">
 
-Bien decíamos tenemos una naquel por defecto pero también podemos crear una naquel nueva haciendo clic
+Le damos un nombre y la asociamos a nuestra VPN y presionamos el botón **Create**.
 
-en la opción de crear neighbor hacele así que voy a hacer clic en Crear una nueva naquel voy a llamarle
+<img src="images/c4/4-1-60.png">
 
-mi Ojota me naquel que por supuesto obviamente sólo la puedo meter en la web.
+Como vemos tenemos una nueva NACL que se nos ha creado en nuestra VPC. Por defecto cuando cuando se crea una nueva NACL todo el trafico será denegado.
 
-Sé que tengo que en este caso es la f 63 que digo crear naquel y como veis tenemos una nueva naquel
+<img src="images/c4/4-1-61.png">
 
-que se nos ha creado en nuestra VPS y he creado esta nueva nacarados porque por defecto como tengo descrito
+Tanto en la pestaña Inbound como en la Outbound.
 
-en la presentación cuando creas una nueva naquel todo el tráfico será denegado es decir si seccionó
+Cualquier nueva NACL que crees denegara tanto el tráfico entrante, como el tráfico saliente, va a denegar todo el tipo de tráficos, con lo que todo es denegado nadie puede entrar a sus redes y dentro de sus redes nadie puede salir a Internet.
 
-y no anaquel y me voy a las reglas Impa como ves tengo la regla cazzo que niega todo el tráfico entrante
+Sin embargo el NACL por defecto tenía una regla Inbound de acceso a todo el tráfico, y Outbound daba acceso también a todo el tráfico, este detalle es muy importante recordarlo siempre que empieces con las NACL en AWS, en caso de que tengas alguna restricción o errores de conexión a tus instancias o desde tus estancias hacia afuera, siempre echa un vistazo a esta NACL porque es muy probable que el problema esté en estas reglas tanto Inbound como Outbound 
 
-y si me voy a las reglas de Abboud tengo otra vez la regla cazzo Holl que también deniega todo el tráfico
 
-saliente es decir cualquier nueva naquel que crees denegara.
+La NACL por defecto tiene asociada tres subredes, están asociadas a la NACL por defecto, con lo cual permitimos la entrada y la salida de HTTP y todo otro tipo de tráfico será denegado en la regla Inbound.
 
-Tanto el tráfico entrante como el tráfico saliente va a denegar todo el tipo de tráficos con lo que
+<img src="images/c4/4-1-62.png">
 
-todo es denegado nadie puede entrar a sus redes y dentro de sus redes nadie puede salir a Internet.
+Pero si asociamos estas tres subredes a la nueva NACL qué crees que pasará.
 
-Sin embargo el anaquel por defecto tenía una regla inbound de acceso a todo el tráfico ideaba acceso
+<img src="images/c4/4-1-63.png">
 
-también a todo el tráfico con lo que este detalle es muy importante que recuerdes siempre que empieces
+La respuesta, se denegara todo el tráfico entrante y saliente. Porque como vimos anteriormente la NACL tiene una regla de denegar todo el tráfico Inbound y denegar todo el tráfico saliente Outbound.
 
-con las maquetas en adolece en caso de que tengas alguna restricción o errores de conexión a tus instancias
+Te estarás preguntando cómo asociar subredes a las NACLs pues es bastante sencillo.
 
-o desde tus estancias hacia afuera siempre echa un vistazo a esta naquel porque es muy probable que
+Si quiero asociar una subred a la nueva NACL lo que tendré que hacer es primero, presionar la pestaña de **Subnet associations**  
 
-el problema esté en estas reglas tanto inbound or bien más cosas como ves la naquel por defecto tiene
+<img src="images/c4/4-1-64.png">
 
-asociada las tres subredes es decir en mi caso que sólo he pintado porque todo su revés están asociadas
+Como vemos no tenemos asociada ninguna subred presionamos el botón **Edit subnet associations**
 
-al anaquel por defecto con lo cual permitimos la entrada y la salida de HTTP y todo otro tipo de tráfico
+<img src="images/c4/4-1-65.png">
 
-será denegado.
+Seleccionamos la primer subred y presionamos el botón **Edit**
 
-Como ves en la regla inbound pero si asociamos estas tres subredes de este naquel a la nueva naquel
+<img src="images/c4/4-1-66.png">
 
-qué crees que pasará.
+Vemos como mi primer NACL que tenia asociada 3 Subredes ahora ya solo tiene asociada dos y la otra fue la que se asocia a la nueva NACL. Y como vemos esta subred no permite ningun trafico entrante ni saliente:
 
-La respuesta está en la siguiente diapositiva de la presentación que como veis se denegara todo el tráfico
+<img src="images/c4/4-1-67.png">
 
-entrante y saliente.
+<img src="images/c4/4-1-68.png">
 
-Porque como te enseñaron anteriormente la naquel tiene una regla de denegar todo el tráfico es grande
 
-y denegar todo para el tráfico saliente bien te estarás preguntando cómo asociar su revés a las naquel
 
-pues es bastante sencillo.
 
-Si quiero asociar una subred a estas nohan aquel que es el ejemplo que te estoy mostrando a continuación
 
-lo que tendré que hacer es primero voy a hacer estomagante para que veas la pestaña de Sumner Asociation
+voy a hacer estomagante para que veas la pestaña de Sumner Asociation
 
 voy a seleccionar esta pestaña de y voy a hacer click.
 
@@ -772,14 +750,6 @@ Ahora únete a mí a la próxima lección.
 
 Muchas gracias.
 
-
-
-
-
- 
-
-
-### Creación de un NACLs
 ### Gestión de reglas en los NACLs
 
 ## Subredes 15:18
