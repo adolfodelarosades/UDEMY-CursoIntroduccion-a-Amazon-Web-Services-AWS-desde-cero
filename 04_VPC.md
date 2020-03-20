@@ -471,7 +471,7 @@ Por lo que es muy importantye entender que los NACLs tienen dos tipos de reglas:
 
 Estos dos tipos de reglas se pueden complicar por que podemos tener diferentes protocolos y puertos en las reglas Inbound de los que se aplican en las reglas Outbound. 
 
-**El NACL creado por defecto permite todo el trafico Inbound y todo el trafico Outbound**
+**El NACL creado por defecto permite todo el trafico Inbound y todo el trafico Outbound**.
 
 Esto lo podemos ver en la consola si seleccionamos las pestañas **Inbound Rules** y **Outbound Rules**.
 
@@ -479,8 +479,298 @@ Esto lo podemos ver en la consola si seleccionamos las pestañas **Inbound Rules
 
 <img src="images/c4/4-1-47.png">
 
-Tenemos una regla que nos permite todos los protocolos y todos los puertos desde/hacia Internet. Por lo que todo esta permitido que entre y salga a través de nuestro NACL.
+Tenemos una regla que nos permite todos los protocolos y todos los puertos desde/hacia Internet. Por lo que esta permitido que entre y salga TODO a través de nuestro NACL.
 
+La regla tiene un número 100 y es explicitamente valuada en el primer orden de las reglas Inbound y Outbound. 
+
+Si se quiere proporcionar un nivel de seguridad extra en las subredes tendremos que cambiar las reglas Inbound y Outbound para nuestra NACL por defecto . 
+
+### Como funcionan las reglas
+
+¿Cómo funcionan estas reglas?
+
+Estas reglas tanto en los Inbound como en los Outbound gobernaran como funcionan las reglas en los NACLs. 
+
+<img src="images/c4/4-1-48.png">
+
+1. Las reglas son evaluadas del número mas pequeño al mas alto.
+2. La primera regla evaluada se aplica independientemente de las reglas que vengan después.
+
+Actualmente tenemos dos reglas en la pestaña Inbound Rules
+
+<img src="images/c4/4-1-46.png">
+
+1. La regla con el No. 100 permite todo el tipo de trafico, todo el tipo de protocolos y todos los puertos desde cualquier fuente, marcada como ALLOW.  
+2. La regla con `*` conocida como **Regla Catch-All**, indica que no podemos cambiar, borrar o editar esta regla, marcada como DENY lo que significa que deniega cualquier fuente, de cualquier puerto, protocolo y tipo de tráfico. El asterisco indica que esta regla sera la que se tome para cualquier otro protocolo que no cumpla con las reglas anteriores.
+
+Si explicitamente no permitieramos el trafico, es decir si no tuvieramos la regla 100, todo el trafico sería denegado.
+
+Vamos a presionar el botón **Edit inbound rules** 
+
+<img src="images/c4/4-1-49.png">
+
+La marcamos como DENY, presionamos la X para eliminarla y presionamos el botón **Save** eliminamos la regla No. 100.
+
+<img src="images/c4/4-1-50.png">
+
+Lo que acabamos de hacer es que todos los paquetes que vayan a entrar a la subred van a ser denegados porque hay explícitamente una regla llamada **Catch-All** con asterisco que va a denegar cualquier protocolo de el tráfico de cualquier tipo y de cualquier fuente. Ahora mismo nadie podría entrar a mi subredes porque acabo de borrar la regla que permite cualquier tráfico y como no puedo borrar la regla **Catch-All**  obviamente todo el tráfico entrante será denegado por defecto en las subredes.
+
+
+Vamos a arreglar un poquito este desaguisado añadiendo una regla que permita el tráfico entrante a la instancia de la subred  del tipo 80 para que la gente de fuera pueda ver mi servidor web.
+
+Presionamos en el botón **Edit inbound rules**.
+
+<img src="images/c4/4-1-51.png">
+
+Voy a añadir una regla con un número 80 que va a ser del tipo HTTP le digo **Save**.
+
+<img src="images/c4/4-1-52.png">
+
+Y como ves ahora mismo estaría permitiendo el tráfico entrante desde internet a mi su red en la instancia sólo para el tráfico HTTP.
+
+<img src="images/c4/4-1-53.png">
+
+Lo demás obviamente se sigue denegando.
+
+Recuerda que NACL va a evaluar el tráfico siempre desde el número de reglas más pequeño al número de reglas más alto en este caso el número más pequeño es el 80 con lo cual el tráfico que llega de Internet del tipo HTTP sería aceptado por mi NACL en sus redes.
+
+Pero para que entiendas bien esta regla número uno que repito las reglas son evaluadas del número más
+
+pequeño el número es alto.
+
+Vamos a volver a Editar las reglas Inbound y vamos a añadir otra regla esta vez con un número más alto 90 del tipo HTTP también.
+
+<img src="images/c4/4-1-54.png">
+
+importante a esta regla que estamos añadiendo le vamos a decir Bnei con lo cual la salvamos.
+
+Y qué crees que pasará ahora.
+
+Tenemos una regla con el número 80 que permite el tráfico entrante de tener a su red a distancia pues
+
+puerto 80 por el puerto web y tenemos otra regla con el número 90 que deniega el mismo tráfico el tráfico
+
+HTTP.
+
+Qué crees que pasará.
+
+Podré ver mi servidor web desde internet o no podré ver mi servidor web de Internet.
+
+Esa sería la pregunta para ti si tu respuesta es que estoy permitiendo ver mi tráfico web mi servidor
+
+web desde Internet.
+
+Estás en lo correcto porque como digo la primera regla es que las reglas son evaluadas del número más
+
+pequeño el número más alto.
+
+Cuál es la regla con el número más pequeño 80.
+
+El tipo de tráfico es el HTTP y permitó.
+
+Obviamente este tráfico lo cual si tengo otra regla que la deniega ya esta regla no se aplicaría así
+
+que recuerda la regla inmediatamente aplica el tráfico y se ejecuta con independencia de las reglas
+
+que vengan a posteriori.
+
+En este caso la Arela que viene a posteriori es denegar el tráfico HTTP o el tráfico web.
+
+Pero como ya lo he permitido Volare la 80 la aplico y se ejecuta con lo cual podrás entrar a nuestro
+
+servidor web con estas reglas que acabo de soñar aquí bien vamos a complicarlo más y voy a evitar otra
+
+vez las reglas inbound y esta regla que deniega el tráfico HTTP con el número 90 le voy a poner el número
+
+70.
+
+Voy a salvar estas reglas y vamos a ver qué pasará ahora.
+
+Podríamos ver nuestro servidor web desde internet o no esta sería nuevamente otra pregunta para ti.
+
+Se ha dicho que ahora nadie podrá ver nuestro servidor web nuestro tráfico web o nuestra página web.
+
+Estás en lo correcto porque la regla número 70 que es la primera con el número más pequeño es ejecutada
+
+primero y como es el protocolo 80 decimos denegar con lo cual aunque tengas una regla posterior que
+
+permite ese tráfico ya te denegando en la regla 70.
+
+Esto es muy importante para que entiendas el tema de las propiedades y quién es evaluada y ejecutada
+
+antes bien sigamos con la presentación y hablemos ahora de la naquel por defecto que tenemos creada
+
+en nuestra web pecé y de las naquel nuevas que vayas a crear en tu PC.
+
+Pero antes de hablar de estas Nakis por defecto y Nakis nuevas vamos a cambiar estas reglas para que
+
+obviamente puedan entrar vía HTTP a mis servidores web con lo que con este cambio cambiando el número
+
+de la arena ahora vuelve a permitir tráfico desde internet a mi servidor web via HTTP puerto 80.
+
+Bien decíamos tenemos una naquel por defecto pero también podemos crear una naquel nueva haciendo clic
+
+en la opción de crear neighbor hacele así que voy a hacer clic en Crear una nueva naquel voy a llamarle
+
+mi Ojota me naquel que por supuesto obviamente sólo la puedo meter en la web.
+
+Sé que tengo que en este caso es la f 63 que digo crear naquel y como veis tenemos una nueva naquel
+
+que se nos ha creado en nuestra VPS y he creado esta nueva nacarados porque por defecto como tengo descrito
+
+en la presentación cuando creas una nueva naquel todo el tráfico será denegado es decir si seccionó
+
+y no anaquel y me voy a las reglas Impa como ves tengo la regla cazzo que niega todo el tráfico entrante
+
+y si me voy a las reglas de Abboud tengo otra vez la regla cazzo Holl que también deniega todo el tráfico
+
+saliente es decir cualquier nueva naquel que crees denegara.
+
+Tanto el tráfico entrante como el tráfico saliente va a denegar todo el tipo de tráficos con lo que
+
+todo es denegado nadie puede entrar a sus redes y dentro de sus redes nadie puede salir a Internet.
+
+Sin embargo el anaquel por defecto tenía una regla inbound de acceso a todo el tráfico ideaba acceso
+
+también a todo el tráfico con lo que este detalle es muy importante que recuerdes siempre que empieces
+
+con las maquetas en adolece en caso de que tengas alguna restricción o errores de conexión a tus instancias
+
+o desde tus estancias hacia afuera siempre echa un vistazo a esta naquel porque es muy probable que
+
+el problema esté en estas reglas tanto inbound or bien más cosas como ves la naquel por defecto tiene
+
+asociada las tres subredes es decir en mi caso que sólo he pintado porque todo su revés están asociadas
+
+al anaquel por defecto con lo cual permitimos la entrada y la salida de HTTP y todo otro tipo de tráfico
+
+será denegado.
+
+Como ves en la regla inbound pero si asociamos estas tres subredes de este naquel a la nueva naquel
+
+qué crees que pasará.
+
+La respuesta está en la siguiente diapositiva de la presentación que como veis se denegara todo el tráfico
+
+entrante y saliente.
+
+Porque como te enseñaron anteriormente la naquel tiene una regla de denegar todo el tráfico es grande
+
+y denegar todo para el tráfico saliente bien te estarás preguntando cómo asociar su revés a las naquel
+
+pues es bastante sencillo.
+
+Si quiero asociar una subred a estas nohan aquel que es el ejemplo que te estoy mostrando a continuación
+
+lo que tendré que hacer es primero voy a hacer estomagante para que veas la pestaña de Sumner Asociation
+
+voy a seleccionar esta pestaña de y voy a hacer click.
+
+Como ves que no hay ninguna red social todavía voy a hacer clic en edit para asociar una de sus redes
+
+en concreto esta primera de salvar fíjate muy bien en esta columnita asociada con que el 3K meados y
+
+el cero cambiará a 1 en cuanto termine.
+
+Ahí lo tienes como es acabo de asociar una nueva red esta red a esta nueva naquel y como ves esta su
+
+red no permite ningún tráfico entrante ni ningún tráfico saliente.
+
+Bien si quisiera permitir algún tráfico a esta red que asociado con esta nueva naquel entraría a la
+
+pestaña Dinh vamos diría editar y voy a añadir una regla con el número 90 que permita por ejemplo el
+
+tráfico.
+
+Esta vez pacer el tráfico https puerto seguro para mi servidor web protocolo HTTPS.
+
+Vamos a poner el sol que sería 0.0 punto cero punto cero barra cero es decir cualquier fuente y le voy
+
+a permitir este tráfico igual seleccionó alago y guardo esta nueva regla como veis ahora estoy permitiendo
+
+para esta nueva naquel que el tráfico entrante de Internet se ha permitido para el protocolo HTTPS que
+
+en concreto es el protocolo 4 4 3.
+
+Por supuesto tenemos que hacer lo mismo para la regla saída porque el tráfico entra pero también tiene
+
+que volver con lo cual tenemos que añadir también la regla de acceso por el protocolo HTTPS.
+
+4 4 3 en la tabla abajo si decimos editar añadimos la regla 90 para el tráfico https
+
+aquí está con el destino 0.0 punto cero punto cero barra cero y con la opción de Alou le decimos salvar
+
+ya tenemos también que el tráfico https pueda salir desde mi su red hacia afuera con lo que ahora sí
+
+vuelvo a la presentación y sigo la página siguiente.
+
+Estoy permitiendo tráfico HTTP de entrada y salida.
+
+Para mí su red que acabo de asociar a esta nueva naquel y por supuesto la regla Cacheiro va denegar
+
+cualquier tráfico de salida y cualquier tráfico de entrada es decir solo voy a permitir la entrada y
+
+la salida del protocolo HTTPS para esta su red en concreto.
+
+Con esta nueva naquel bien si seguimos con la presentación se que hemos dedicado más tiempo de lo que
+
+tenía pensado en esta parte pero la seguridad de tu entorno NWS es primordial.
+
+No basta con diseñar una solución que funcione sino que hay que diseñar una solución que funcione y
+
+a la vez sea muy segura.
+
+Y por supuesto hay soluciones que son más seguras que otras.
+
+Por eso es muy importante que entiendas bien cómo se aplican las reglas en los anaqueles y cómo configurar
+
+bien estas reglas de acceso a tus subredes con lo que cuando empecemos a desplegar instancias bases
+
+de datos esta parte se va a convertir en primordial que entiendas para obviamente poder hacer trabes
+
+sutil con lo que asegúrate de configurar bien las reglas inbound y Abán porque no solamente vas a aumentar
+
+la seguridad de tu entorno en este caso de tus redes sino que además vas a tener menos problemas para
+
+hacer Travel sútil en los flujos de datos tanto desde Internet hacia adentro como desde fuera hacia
+
+Internet por lo que para terminar resumamos que son las naquel.
+
+Recuerda que es una capa opcional de seguridad con lo cual puedes permitir perfectamente acceso a todo
+
+el tráfico a tus redes o por consiguiente si quieres limitar cualquier tipo de tráfico tendrás que jugar
+
+con estas reglas que te acabo de enseñar tanto en la opción de inbound como en la opción de Avan.
+
+Aunque mi sugerencia y una mejor práctica es que uses los naquel para permitir sólo el tipo de tráfico
+
+que necesitas no que permitas todo el tráfico así que limita ya el acceso.
+
+Inbound ya van a tu subredes para sólo el tráfico que necesitas que esas instancias que están en la
+
+subredes necesiten ver y por supuesto recuerda estos detalles importantes.
+
+Número 1.
+
+Reglas son evaluadas del número menor al número mayor como el más visto.
+
+Regla número 2 la primera regla se aplica independientemente de las reglas que vengan después.
+
+Regla número 3 en la que por defecto permite todo el tráfico a todas las redes.
+
+Y Regla Número 5 una red sólo puede ser asociada a una naquel.
+
+Si recuerdas cuándo a Sophie una de las subredes a éste no naquel automáticamente borró esa su red que
+
+estaba asociada ya a la naquel por defecto y la incluyó a la nueva en aquel que cree con lo cual muy
+
+importante sólo una red puede ser asociada a una sola naquel y con esto terminamos esta lección como
+
+siempre si tienes el tiempo necesario.
+
+Ahora únete a mí a la próxima lección.
+
+Muchas gracias.
 
 
 
