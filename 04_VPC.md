@@ -636,121 +636,44 @@ Vemos como mi primer NACL que tenia asociada 3 Subredes ahora ya solo tiene asoc
 
 <img src="images/c4/4-1-68.png">
 
+Bien si quisiera permitir algún tráfico a esta subred que he asociado a la nueva NACL entraría a la pestaña Inbound clic en **Edit inboud roules*** y voy a añadir una regla con el número 90.
+
+<img src="images/c4/4-1-69.png">
+
+Presiono el botón **Save**
+
+<img src="images/c4/4-1-70.png">
+
+Como ves ahora estoy permitiendo para esta nueva NACL que el tráfico entrante de Internet se ha permitido para el protocolo HTTPS que en concreto es el protocolo 443.
+
+Por supuesto tenemos que hacer lo mismo para la regla Outbound porque el tráfico entra pero también tiene que volver, con lo cual tenemos que añadir también la regla de acceso por el protocolo HTTPS 443 en la tabla Outbound.
+
+<img src="images/c4/4-1-71.png">
+
+le decimos **Save**
+
+<img src="images/c4/4-1-72.png">
+
+ya tenemos también que el tráfico https que pueda salir desde mi su red hacia afuera.
+
+Mi diagrama quedaría así:
+
+<img src="images/c4/4-1-73.png">
+
+Estoy permitiendo tráfico HTTP de entrada y salida, para mí subred que acabo de asociar a esta nueva NACL
 
 
+La **Catch-All** va denegar cualquier tráfico de salida y cualquier tráfico de entrada es decir solo voy a permitir la entrada y la salida del protocolo HTTPS para esta subred en concreto.
 
+### Reglas en los NACLs
 
-voy a hacer estomagante para que veas la pestaña de Sumner Asociation
+Detalles y reglas que debes conocer sobre los NACLs:
 
-voy a seleccionar esta pestaña de y voy a hacer click.
-
-Como ves que no hay ninguna red social todavía voy a hacer clic en edit para asociar una de sus redes
-
-en concreto esta primera de salvar fíjate muy bien en esta columnita asociada con que el 3K meados y
-
-el cero cambiará a 1 en cuanto termine.
-
-Ahí lo tienes como es acabo de asociar una nueva red esta red a esta nueva naquel y como ves esta su
-
-red no permite ningún tráfico entrante ni ningún tráfico saliente.
-
-Bien si quisiera permitir algún tráfico a esta red que asociado con esta nueva naquel entraría a la
-
-pestaña Dinh vamos diría editar y voy a añadir una regla con el número 90 que permita por ejemplo el
-
-tráfico.
-
-Esta vez pacer el tráfico https puerto seguro para mi servidor web protocolo HTTPS.
-
-Vamos a poner el sol que sería 0.0 punto cero punto cero barra cero es decir cualquier fuente y le voy
-
-a permitir este tráfico igual seleccionó alago y guardo esta nueva regla como veis ahora estoy permitiendo
-
-para esta nueva naquel que el tráfico entrante de Internet se ha permitido para el protocolo HTTPS que
-
-en concreto es el protocolo 4 4 3.
-
-Por supuesto tenemos que hacer lo mismo para la regla saída porque el tráfico entra pero también tiene
-
-que volver con lo cual tenemos que añadir también la regla de acceso por el protocolo HTTPS.
-
-4 4 3 en la tabla abajo si decimos editar añadimos la regla 90 para el tráfico https
-
-aquí está con el destino 0.0 punto cero punto cero barra cero y con la opción de Alou le decimos salvar
-
-ya tenemos también que el tráfico https pueda salir desde mi su red hacia afuera con lo que ahora sí
-
-vuelvo a la presentación y sigo la página siguiente.
-
-Estoy permitiendo tráfico HTTP de entrada y salida.
-
-Para mí su red que acabo de asociar a esta nueva naquel y por supuesto la regla Cacheiro va denegar
-
-cualquier tráfico de salida y cualquier tráfico de entrada es decir solo voy a permitir la entrada y
-
-la salida del protocolo HTTPS para esta su red en concreto.
-
-Con esta nueva naquel bien si seguimos con la presentación se que hemos dedicado más tiempo de lo que
-
-tenía pensado en esta parte pero la seguridad de tu entorno NWS es primordial.
-
-No basta con diseñar una solución que funcione sino que hay que diseñar una solución que funcione y
-
-a la vez sea muy segura.
-
-Y por supuesto hay soluciones que son más seguras que otras.
-
-Por eso es muy importante que entiendas bien cómo se aplican las reglas en los anaqueles y cómo configurar
-
-bien estas reglas de acceso a tus subredes con lo que cuando empecemos a desplegar instancias bases
-
-de datos esta parte se va a convertir en primordial que entiendas para obviamente poder hacer trabes
-
-sutil con lo que asegúrate de configurar bien las reglas inbound y Abán porque no solamente vas a aumentar
-
-la seguridad de tu entorno en este caso de tus redes sino que además vas a tener menos problemas para
-
-hacer Travel sútil en los flujos de datos tanto desde Internet hacia adentro como desde fuera hacia
-
-Internet por lo que para terminar resumamos que son las naquel.
-
-Recuerda que es una capa opcional de seguridad con lo cual puedes permitir perfectamente acceso a todo
-
-el tráfico a tus redes o por consiguiente si quieres limitar cualquier tipo de tráfico tendrás que jugar
-
-con estas reglas que te acabo de enseñar tanto en la opción de inbound como en la opción de Avan.
-
-Aunque mi sugerencia y una mejor práctica es que uses los naquel para permitir sólo el tipo de tráfico
-
-que necesitas no que permitas todo el tráfico así que limita ya el acceso.
-
-Inbound ya van a tu subredes para sólo el tráfico que necesitas que esas instancias que están en la
-
-subredes necesiten ver y por supuesto recuerda estos detalles importantes.
-
-Número 1.
-
-Reglas son evaluadas del número menor al número mayor como el más visto.
-
-Regla número 2 la primera regla se aplica independientemente de las reglas que vengan después.
-
-Regla número 3 en la que por defecto permite todo el tráfico a todas las redes.
-
-Y Regla Número 5 una red sólo puede ser asociada a una naquel.
-
-Si recuerdas cuándo a Sophie una de las subredes a éste no naquel automáticamente borró esa su red que
-
-estaba asociada ya a la naquel por defecto y la incluyó a la nueva en aquel que cree con lo cual muy
-
-importante sólo una red puede ser asociada a una sola naquel y con esto terminamos esta lección como
-
-siempre si tienes el tiempo necesario.
-
-Ahora únete a mí a la próxima lección.
-
-Muchas gracias.
-
-### Gestión de reglas en los NACLs
+1. Las reglas son evaluadas del número menor al mayor.
+2. La primera regla se aplica independientemente de las reglas que vengan después.
+3. El NACLs por defecto permite todo el tráfico a las subredes.
+4. Nuevas NACLs deniega todo el trafico a las subredes.
+5. Una subred solo puede ser asociada a una NACLs
 
 ## Subredes 15:18
 
