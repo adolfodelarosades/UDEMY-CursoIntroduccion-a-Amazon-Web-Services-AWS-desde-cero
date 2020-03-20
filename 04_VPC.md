@@ -321,11 +321,87 @@ Como vemos en el siguiente diagrama después del Internet Gateway tenemos nuestr
 
 <img src="images/c4/4-1-11.png"> 
 
-Así cuando una instancia EC2 requiere alguna solicitud web, el dato llega desde Internet pasa por el Internet Gateway y es la tabla de rutas la qiue ruta el paquete hacia una u otra subred.
- 
+Así cuando una instancia EC2 requiere alguna solicitud web, el dato llega desde Internet pasa por el Internet Gateway y es la tabla de rutas la que decide a que subred envía el paquete. Recordemos que las tablas de rutas equilaen a nuestro router en la red privada de casa.
 
+La tabla de rutas es la que provee la conexión a todas las subredes dentro de la VPC
+
+Si observamos en el VPC Dashboard la sección Route Tables, y dentro vemos la pestaña Routes, veremos lo que esta adjuntado en esa tabla de rutas y por donde pasarán los paquetes.
+
+<img src="images/c4/4-1-26.png"> 
+
+Por un lado tenemos: 
+
+`0.0.0.0/0  igw-83879de4	active   No`
+
+Esto representa al IGW que tenemos en nuestra VPC. En el diagrama representaría la línea que conecta el IGW con la tabla de rutas. Estamos diciendo que todo lo que vaya a `0.0.0.0/0` (Internet) lo mandemos a traves de `igw-83879de4` (IGW).
+
+La otra línea que tenemos:
+
+`172.31.0.0/16	   local	   active   No`
+
+Representa la dirección IP de nuestra VPC, Amazon nos ha asignado `172.31.0.0/16`. En el diagrama esta línea representaria las dos flechas que salen de la tabla de rutas.
+
+¿Qué pasaría si desconecto mi IGW, que se mostraría en la línea?
+
+`0.0.0.0/0  igw-83879de4	active   No`
+   
+Vamos a desconectar el IGW asociado a la VPN.
+
+Desde la propia línea puedo pulsar en el id del IGW y me abrira una nueva pestaña con la información del IGW, procedemos a desadjuntar.
+
+<img src="images/c4/4-1-27.png"> 
+
+En nuestro diagrama lo que acabamos de hacer queda representado así:
+
+<img src="images/c4/4-1-29.png"> 
+
+Es decir hemos desconectado nuestro IGW por lo que ya no pertenece a nuestra VPC, pero sigue conectado en las tablas de rutas.
+
+Si refresco la página de Route Tables veremos lo siguiente:
+
+<img src="images/c4/4-1-28.png"> 
+
+Se ha producido un **Black Hole** un agujero negro. Si las instancias EC2 quisieran ir a internet lo harían a través del IGW el cual esta desconectado, por lo que no podrían. Para arreglar el problema bastaria conectar nevamente el IGW a nuestra VPC.
+
+Anteriormente habímos creado un segundo IGW que es el que adjuntaremos a nuestra VPC.
+
+<img src="images/c4/4-1-30.png">
+
+Una vez hecho esto en nuestro díagrama tendríamos un IGW dentro de nuestra VPN pero nuestra tabla de rutas estaría apuntado todavía el primer IGW.
+
+Por lo que para añadir el segundo IGW que acabamos de adjuntar a la VPC debemos editar las tablas de ruta pulsando el botón **Edit routes**.
+
+<img src="images/c4/4-1-31.png">
+
+Aquí modificamos el IGW que tenemos por el otro y presionamos el botón **Save routes**
+
+<img src="images/c4/4-1-32.png">
+
+Con lo que nuestro **Black Hole** desaparece ya que hemos asignado el IGW que esta adjuntado a Internet. Representado en nuestro diagrama tenemos:
+
+<img src="images/c4/4-1-33.png">
+
+Tenemos el nuevo IGW conectado a nuestra tabla de rutas y el anterior IGW desconectado de la tabla de rutas. Con lo que hemos restaurado la conexión a Internet a través de un nuevo IGW. 
+
+### Detalles y reglas que debes conocer sobre las tablas de rutas:
+
+* A diferencia de los IGW, puedes tener múltiples tablas de rutas activas en tu VPC.
+* No puedes borrar una tabla de rutas si esta tiene dependencias como subredes asociadas.
 
 ### Creando y borrando tablas de rutas
+
+Para comprender lo anterior vamos a crear una nueva tabla de rutas, pulsando el botón **Create route table** 
+
+<img src="images/c4/4-1-34.png">
+
+Ingresamos un nombre y la adjuntamos a la única VPC que tenemos, presionamos el botón **Create**.
+
+<img src="images/c4/4-1-35.png">
+
+Con esto tenemos nuestra nueva tabla de rutas la cual no es principal ni tampoco tiene asociada una subred. Si la seleccionamos veremos que no esta conectada a ningún IGW. Como si la tiene la primer tabla de rutas.
+
+
+
 ### Configurando nuevas rutas en las tablas de rutas.
 
 ## Network Access Control List (NACLs) 23:09
