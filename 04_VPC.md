@@ -677,5 +677,69 @@ Detalles y reglas que debes conocer sobre los NACLs:
 
 ## Subredes 15:18
 
+* Definición de una subred
+* Funciones de las subredes
+* Subredes publicas vs privadas
+* Creación de redes publicas y privadas
+
+### Definición de una subred
+
+* ¿Qué es una subred según JMG?
+   * Una subsección de una red. La subred incluye todas las instancias en una ubicación especifica.
+   
+* ¿Qué es una subred según AWS?  
+   * Cuando creas una VPC, esta abarca todas las zonas de disponibilidad de la región.
+   * Después de crear una VPC, puedes agregar una o mas subredes en cada zona de disponibilidad.
+   * Cada subred debe resistir completyamente dentro de una zona de disponibilidad y no puede abarcar otras zonas.
+   
+**Tu VPC por defecto ya tiene 2,3 o 4 (depende la región seleccionada) subredes creadas por defecto**
+
+Como yo elegi la región de Irlanda tengo las siguientes 3 subredes.
+
+<img src="images/c4/4-1-74.png">
+
+Aquí podemos ver cuantas AZs existen disponible por cada región, que sera el número de subredes que se crearan si seleccionamos cada una de las zonas.
+
+<img src="images/c4/4-1-75.png">
+
+Volviendo a las subredes creadas en mi VPC vemos que cada una de ellas esta creada en una zona diferente.
+
+<img src="images/c4/4-1-74.png">
+
+Ademas cada una de ellas tiene su propia CIRD o dirección IP, su estado y en que VPC esta creada, tenemos también su ID, pero ninguna de ellas tiene un nombre.
+
+**Una de las mejores practicas en cuanto al nombre de las subredes es tener mínimo dos subredes publicas 1 y 2; y dos subredes privadas 1 y 2**
+
+Vamos a cambiarle el nombre a nuestras 3 subredes actuales.
+
+<img src="images/c4/4-1-77.png">
+
+Pero para seguir con las mejores practicas deberíamos a crear otra subred para poder tener dos publicas y dos privadas.
+
+Según nuestro diagrama, tenemos dos Subredes Publicas la 1 y la 2, y dos Subredes Privadas la 1 y la 2, las cuales estan en diferentes zonas de disponibilidad AZs.
+
+<img src="images/c4/4-1-78.png">
+
+Tenemos la Subred Publica 1 y la Subred Privada 2 en una AZ 1a y la Subred Publica 2 y Subred Privada 2 en la AZ 1b. Esto se hace como mejor practica para que en caso de caída de una de las Azs, tengas las instancias de la subred publica como las instancias de la red privada disponibles en otra AZ por temas de alta disponibilidad. 
+
+¿Como diferencio las Subredes Publicas de las Privadas?
+
+El nombre no hace a la Subred Publica o Privada. 
+
+<img src="images/c4/4-1-79.png">
+
+Como vemos en el diagrama las Subredes Publicas tienen acceso a Internet a través de las tablas de rutas donde tenemos conectadas nuestro IGW y las subredes privadas no tienen ninguna ruta en las tablas de ruta que se conecten con Internet. 
+
+
+### Funciones de las subredes
+
+### Subredes publicas vs privadas
+
+### Creación de redes publicas y privadas
+
+
+
+
+
 ## Availability Zones (AZs) 19:48
 
